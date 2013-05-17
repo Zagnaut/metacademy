@@ -1,0 +1,66 @@
+
+extends layout
+
+block content
+  section.metacademyapp
+  section(id="matchups", class="row")
+    #player.span6
+    #opponent.span6
+  hr
+  section(id="protips")
+
+
+  //- Activate this modal window with a button
+  //- section(class="protips row")
+  //-   .span6#protipview
+  //-   .span6
+  //-     .modal.hide.fade
+  //-       .modal-header
+  //-         p New Protip
+
+  //-       form(method='post', action="/api/protip")
+  //-         .modal-body 
+  //-             div
+  //-               input(type='text', name="user", placeholder='User')
+  //-             div
+  //-               input(type='text', name="description", placeholder='Five Word Description')
+  //-             div
+  //-               textarea(name="content", placeholder="Protip Content")
+  //-         .modal-footer
+  //-           input(type="submit", value="Submit").btn.btn-primary
+
+block templates
+  script(type="x-handlebars-template", id="champion-template")
+    <div class="well champion">
+    <div class="search champion-search">
+    <input type="text" class="span5 search-query", placeholder="Find a Champion...">
+    </div>
+    <div class="row champ">
+    <div class="span2 offset1 nameplate">
+    <a class="champion-portrait"><img src="{{portrait}}"></a>
+    <h3 class="champion-name">{{name}}</h3>
+    <p class="champion-title">{{title}}</p>
+    </div>
+    <div class="span2 abilites">
+    <ul class="abilities-standard unstyled inline">
+    <li><img src="{{abilities.q.portrait}}" class="q"></li>
+    <li><img src="{{abilities.w.portrait}}" class="w"></li>
+    <li><img src="{{abilities.e.portrait}}" class="e"></li>
+    </ul>
+    <ul class="abilities-special unstyled inline">
+    <li><img src="{{abilities.i.portrait}}" class="i"></li>
+    <li><img src="{{abilities.r.portrait}}" class="r"></li>
+    </ul>
+    </div>
+    </div>
+    </div>
+
+  script(type="x-handlebars-template", id="protip-template")
+    {{#each protip}}
+    <div class="protip">
+    <h4>{{this.user}}</h4>
+    <h5>{{this.description}}</h5>
+    <p>{{this.content}}</p>
+    </div>
+    {{/each}}
+

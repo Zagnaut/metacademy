@@ -1,0 +1,21 @@
+{
+  "name": "metacademy",
+  "version": "0.4.0",
+  "license": "GNU Public License",
+  "dependencies": {
+    "express": "3.0.3",
+    "jade": "~0.28.1",
+    "underscore": "~1.4.3",
+    "mongoose": "~3.5.4",
+    "jasmine-node": "~1.1.0",
+    "request": "~2.12.0",
+    "coffee-script": "~1.4.0"
+  },
+  "subdomain": "metacademy",
+  "engines": {
+    "node": "0.8.x"
+  },
+  "scripts": {
+    "start": "server.js"
+  }
+}

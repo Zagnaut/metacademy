@@ -1,0 +1,15 @@
+
+extends layout
+
+block content
+  .row
+    .span12
+      form(method='post', action="/api/protip")
+        div
+          input(type='textbox', name="user", placeholder='User')
+        div
+          input(type='textbox', name="description", placeholder='Five Word Description')
+        div
+          textarea(name="content", placeholder="Protip Content")
+        div
+          input(type="submit", value="submit")

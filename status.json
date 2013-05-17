@@ -1,0 +1,15 @@
+{
+  "todos": [
+    "add require.js support for the client",
+    "move todos from readme to status.json",
+    "move protip form to popup on button",
+    "have protips list in their own wells, grid view",
+    "concatenate all your css with best tool",
+  ],
+  "done": [
+    "make protip board",
+    "handlebars templating",
+    "client models",
+    "server models"
+  ]
+}

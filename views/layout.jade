@@ -5,10 +5,10 @@ html(lang="en")
     meta(charset='utf8')
     base(href='/')
     title Metacademy
-    link(rel='stylesheet', href='css/bootstrap.min.css')
-    link(rel='stylesheet', href='css/bootstrap-responsive.min.css')
-    link(rel='stylesheet', href='css/darkstrap.css')
-    link(rel='stylesheet', href='css/app.css')
+    link(rel="stylesheet", href='bootstrap/css/bootstrap.css')
+    link(rel="stylesheet", href='bootstrap/css/bootstrap-responsive.min.css')
+    link(rel="stylesheet", href='css/darkstrap.css')
+    link(rel="stylesheet", href='css/app.css')
 
   body
     header
@@ -19,6 +19,7 @@ html(lang="en")
               h1.logo-text.inline Metacademy
 
     article.wrapper.container
+
       block content
 
       footer
@@ -32,21 +33,6 @@ html(lang="en")
           li
             a(class="baltimore", href="http://madewithloveinbaltimore.org", target="_blank") Made with &hearts; in Baltimore
 
-    block templates
-    block scripts
-
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.js")
-    script(src='lib/underscore.js')
-    script(src='lib/backbone.js')
-    script(src='lib/handlebars.js') 
-    script(src='js/models/champion.js')
-    script(src='js/models/protip.js')
-    script(src='js/models/user.js')
-    script(src='js/collections/champions.js')
-    script(src='js/collections/protips.js')
-    script(src='js/views/player-view.js')
-    script(src='js/views/opponent-view.js')
-    script(src='js/views/protip-board-view.js')
-    script(src='js/views/protip-view.js')
-    script(src='js/views/app-view.js')
+    script(src='lib/jquery-1.9.1.js')
+    script(src='js/championslist.js')
     script(src='js/main.js')

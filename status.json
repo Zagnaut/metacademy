@@ -1,14 +1,9 @@
 {
   "todos": [
-    "move todos from readme to status.json",
-    "move protip form to popup on button",
-    "have protips list in their own wells, grid view",
-    "add a basic build tool for concat css and js",
+    "Have angular insert champion information from autocomplete search",
+    "add a basic build tool for concat css and js"
   ],
   "done": [
-    "make protip board",
-    "handlebars templating",
-    "client models",
-    "server models"
+    "move todos from readme to status.json"
   ]
 }

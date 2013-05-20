@@ -1,4 +1,4 @@
-var championsList = {
+var champions = {
     "Ahri": {
         "id":        "103",
         "name":      "Ahri",
@@ -65,7 +65,7 @@ var championsList = {
         "title":     "the Serpent's Embrace",
         "portrait":  "http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.152/content/champion/icons/69.jpg"
     }, 
-    "Cho": {
+    "Cho'Gath": {
         "id":        "31",
         "name":      "Cho'Gath",
         "title":     "the Terror of the Void",
@@ -245,13 +245,13 @@ var championsList = {
         "title":     "the Heart of the Tempest",
         "portrait":  "http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.152/content/champion/icons/85.jpg"
     }, 
-    "Kha": {
+    "Kha'Zix": {
         "id":        "121",
         "name":      "Kha'Zix",
         "title":     "the Voidreaver",
         "portrait":  "http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.152/content/champion/icons/121.jpg"
     },
-    "Kog": {
+    "Kog'Maw": {
         "id":        "96",
         "name":      "Kog'Maw",
         "title":     "the Mouth of the Abyss",
@@ -611,7 +611,7 @@ var championsList = {
         "title":     "the Magus Ascendant",
         "portrait":  "http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.152/content/champion/icons/101.jpg"
     }, 
-    "Xin": {
+    "Xin Zhao": {
         "id":        "5",
         "name":      "Xin Zhao",
         "title":     "the Seneschal of Demacia",

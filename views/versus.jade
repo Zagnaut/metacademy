@@ -1,8 +1,26 @@
-
 extends layout
 
 block content
-  section.metacademyapp
-  section(id="matchups", class="row")
-    #player.span6
-    #opponent.span6
+  section.matchups.row
+    #player.span6(ng-controller="ChampCtrl")
+      input(type="text",
+        placeholder="Find a Champion...",
+        ng-model="search",
+        ng-change="change()",
+        auto-complete)
+      .well
+        h4 {{champion.name}}
+        h5 {{champion.title}}
+        img(ng-src="{{champion.portrait}}")
+
+    #opponent.span6(ng-controller="ChampCtrl")
+      input(type="text",
+        placeholder="Find a Champion...",
+        ng-model="search",
+        ng-change="change()",
+        auto-complete)
+      .well
+        h4 {{champion.name}}
+        h5 {{champion.title}}
+        img(ng-src="{{champion.portrait}}")
+  section()

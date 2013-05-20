@@ -7,21 +7,21 @@
   * postProtip - Creates a new protip
  */
 
-var Protip  = require('../models/protip.js'),
-    User    = require('../models/user.js'),
-    Comment = require('../models/comment.js'),
+var Protip   = require('../models/protip.js'),
+    User     = require('../models/user.js'),
+    Comment  = require('../models/comment.js'),
     Champion = require('../models/champion.js');
 
 
-exports.champions = function(req, res) {
+exports.allChampions = function(req, res) {
   Champion.find(function(err, champions) {
-    res.send(JSON.stringify(champions));
+    res.send({"champions": champions});
   });
 };
 
 exports.findChampion = function(req, res) {
   Champion.findOne({name: req.params.name}, function(err, champion) {
-    res.send(champion);
+    res.send({"champion": champion});
   });
 };
 

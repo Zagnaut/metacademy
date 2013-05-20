@@ -3,8 +3,8 @@
  */
 
 var express  = require('express'),
-    routes   = require('./routes'),
-    api      = require('./routes/api'),
+    controllers   = require('./controllers'),
+    api      = require('./controllers/api'),
     http     = require('http'),
     path     = require('path'),
     mongoose = require('mongoose');
@@ -37,27 +37,20 @@ app.configure(function(){
   app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, '/app')));
+  app.use(express.static(path.join(__dirname, '/public')));
   app.use(express.errorHandler());
 });
 
 
 // Our API routes
 
-// Replies with a list of all champions
-app.get('/api/champions', api.champions);
-
-// Returns a specific champion by name from database.
+app.get('/api/champions', api.allChampions);
 app.get('/api/champions/:name', api.findChampion);
-
-// Should send an object containing all the test protips.
 app.get('/api/protips', api.getAllUsers);
-
-// Should save the protip
 app.post('/api/protip', api.postProtip);
 
 
-// Our top-level webpage routes
+// Our website routes
 
 app.get('/form', routes.form);     // Test form for posting protips
 app.get('/versus', routes.versus); // Page for Versus

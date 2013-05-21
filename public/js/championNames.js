@@ -50,7 +50,7 @@ var champNames = [
     "Malphite", 
     "Malzahar", 
     "Maokai", 
-    "Master", 
+    "Master Yi", 
     "Miss Fortune", 
     "Mordekaiser", 
     "Morgana", 

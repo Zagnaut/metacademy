@@ -19,3 +19,7 @@ function ChampCtrl($scope) {
     $scope.champion = champions[$scope.search];  
   }
 }
+
+$(document).ready(function() {
+  $("#tabs").tabs();
+});

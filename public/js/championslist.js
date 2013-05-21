@@ -305,13 +305,13 @@ var champions = {
         "title":     "the Twisted Treant",
         "portrait":  "http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.152/content/champion/icons/57.jpg"
     }, 
-    "Master": {
+    "Master Yi": {
         "id":        "11",
         "name":      "Master Yi",
         "title":     "the Wuju Bladesman",
         "portrait":  "http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.152/content/champion/icons/11.jpg"
     }, 
-    "Miss": {
+    "Miss Fortune": {
         "id":        "21",
         "name":      "Miss Fortune",
         "title":     "the Bounty Hunter",

@@ -25,7 +25,6 @@ block content
                 td(ng-repeat="ability in champion.abilities | limitTo:-2")
                   img(ng-src="{{ability.icon}}")
         
-
     #opponent.span6(ng-controller="ChampCtrl")
       label Opponent
       input(type="text",
@@ -48,15 +47,3 @@ block content
               tr
                 td(ng-repeat="ability in champion.abilities | limitTo:-2")
                   img(ng-src="{{ability.icon}}")
-          
-
-  section.row
-    ul.nav.nav-tabs
-      li
-        a(href="#") Protips
-      li
-        a(href="#") Strong Against
-      li
-        a(href="#") Weak Against
-      li
-        a(href="#") Good With

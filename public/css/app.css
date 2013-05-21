@@ -1,9 +1,6 @@
-/*@import url(http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic);
-
 body {
-  font-family: "Libre Baskerville", serif; 
-  font-weight: 400;
-}*/
+  overflow-x: hidden;
+}
 
 
 h1 {
@@ -35,15 +32,6 @@ button a {
   margin-botton: 25px;
 }
 
-.logo {
-  height: 50px;
-  width: 50px;
-}
-
-.logo-text {
-  font-size: 3em;
-}
-
 footer {
   bottom: 1px;
   margin: 0 auto;
@@ -62,10 +50,6 @@ footer a {
   margin-left: .25%;
   margin-right: .25%;
   display: inline;
-}
-
-.champion-card {
-
 }
 
 .champion-img {

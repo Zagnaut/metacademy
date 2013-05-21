@@ -14,15 +14,20 @@ html(lang="en")
     header
       .navbar
         .navbar-inner
-          .container
-            a(class="brand", href="#")
-              h1.logo-text.inline Metacademy
+          a(class="brand", href="#")
+            h4.logo-text.inline Metacademy
+          ul.nav
+            li 
+              a(href="#") Home
+            li 
+              a(href="/versus") Versus
+
 
     article.wrapper.container
 
       block content
 
-      //- footer
+      footer
         ul.unstyled.inline
           li
             a(href="/index") Home

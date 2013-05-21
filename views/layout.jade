@@ -10,7 +10,7 @@ html(lang="en")
     link(rel="stylesheet", href='css/darkstrap.css')
     link(rel="stylesheet", href='css/app.css')
 
-  body(ng-app="metacademy")
+  body(ng-app="metacademy",ng-cloak)
     header
       .navbar
         .navbar-inner
@@ -22,7 +22,7 @@ html(lang="en")
 
       block content
 
-      footer
+      //- footer
         ul.unstyled.inline
           li
             a(href="/index") Home

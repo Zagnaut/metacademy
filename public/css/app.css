@@ -63,3 +63,16 @@ footer a {
   margin-right: .25%;
   display: inline;
 }
+
+.champion-card {
+
+}
+
+.champion-img {
+  float: left;
+  margin-right: 18.3333333px;
+}
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none;
+}

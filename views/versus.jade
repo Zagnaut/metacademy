@@ -5,26 +5,50 @@ block content
     #player.span6(ng-controller="ChampCtrl")
       label Player
       input(type="text",
-        placeholder="Find a Champion...",
+        placeholder="Enter Player Champion",
         ng-model="search",
         ng-change="change()",
         auto-complete)
       .well
-        h4 {{champion.name}}
-        h5 {{champion.title}}
-        img(ng-src="{{champion.portrait}}")
+        .container
+          .champion-img
+            img(ng-src="{{champion.imageUrl}}")
+          .champion-title
+            h3 {{champion.name}}
+            h4 {{champion.title}}
+          .champion-abilities
+            table
+              tr
+                td(ng-repeat="ability in champion.abilities | limitTo:3")
+                  img(ng-src="{{ability.icon}}")
+              tr
+                td(ng-repeat="ability in champion.abilities | limitTo:-2")
+                  img(ng-src="{{ability.icon}}")
+        
 
     #opponent.span6(ng-controller="ChampCtrl")
       label Opponent
       input(type="text",
-        placeholder="Find a Champion...",
+        placeholder="Enter Opponent Champion",
         ng-model="search",
         ng-change="change()",
         auto-complete)
       .well
-        h4 {{champion.name}}
-        h5 {{champion.title}}
-        img(ng-src="{{champion.portrait}}")
+        .container
+          .champion-img
+            img(ng-src="{{champion.imageUrl}}")
+          .champion-title
+            h3 {{champion.name}}
+            h4 {{champion.title}}
+          .champion-abilities
+            table
+              tr
+                td(ng-repeat="ability in champion.abilities | limitTo:3")
+                  img(ng-src="{{ability.icon}}")
+              tr
+                td(ng-repeat="ability in champion.abilities | limitTo:-2")
+                  img(ng-src="{{ability.icon}}")
+          
 
   section.row
     ul.nav.nav-tabs

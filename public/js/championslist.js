@@ -1,4 +1,4 @@
-var champions = {
+var partialChampions = {
     "Ahri": {
         "id":        "103",
         "name":      "Ahri",

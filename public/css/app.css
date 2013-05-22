@@ -1,5 +1,5 @@
 h3 {
-  text-shadow: -1px 0px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.5);
 }
 
 a {
@@ -64,10 +64,6 @@ section.row {
 .ability {
   margin: 7.2px;
   display: inline-block;
-}
-
-.key {
-  text-align: center;
 }
 
 .vertical-break {

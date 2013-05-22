@@ -5,38 +5,39 @@ block content
     #player.span6.row(ng-controller="ChampCtrl")
       header.champion-name
         h3 {{champion.name}}
-        h4 
-        |  {{champion.title}}
-      label Player
-      input(type="text",
-        placeholder="Enter Player Champion",
-        ng-model="search",
-        ng-change="change()",
-        auto-complete)
-      .card
+        p {{champion.title}}
+      form.search
+        label Player
+        input(type="text",
+          placeholder="Enter Player Champion",
+          ng-model="search",
+          ng-change="change()",
+          auto-complete)
+      .well
         .champion-img
           img(ng-src="{{champion.imageUrl}}")
         .champion-abilities(ng-repeat="ability in champion.abilities")
           img(class="ability",ng-src="{{ability.icon}}")
-          h4.ability {{ability._key}}
+          h5.ability {{ability._key}}
 
     #opponent.span6.row(ng-controller="ChampCtrl")
       header.champion-name
         h3 {{champion.name}}
-        h4 
-        |  {{champion.title}}
-      label Opponent
-      input(type="text",
-        placeholder="Enter Opponent Champion",
-        ng-model="search",
-        ng-change="change()",
-        auto-complete)
-      .card
+        p {{champion.title}}
+      form.search
+        label Opponent
+        input(type="text",
+          class="champion-search",
+          placeholder="Enter Opponent Champion",
+          ng-model="search",
+          ng-change="change()",
+          auto-complete)
+      .well
         .champion-img
           img(ng-src="{{champion.imageUrl}}")
         .champion-abilities(ng-repeat="ability in champion.abilities")
           img(class="ability",ng-src="{{ability.icon}}")
-          h4.ability {{ability._key}}
+          h5.ability {{ability._key}}
 
   section.row
     .span12

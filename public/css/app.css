@@ -1,18 +1,5 @@
-h3 {
-  text-shadow: 1px 0px 1px rgba(0, 0, 0, 0.5);
-}
+.protips-grid > li {
 
-a {
-  color: rgba(255, 255, 255, 0.25);
-}
-
-a:hover {
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 3px;
-  color: rgba(0, 0, 0, 1);
-  text-decoration: none;
-  border-bottom: 1px dotted;
-  border-bottom-color: rgba(255, 255, 255, 0.25);
 }
 
 button a {
@@ -44,8 +31,9 @@ section.row {
   display: inline-block;
 }
 
-.champion-name h4 {
+.champion-name p {
   display: inline;
+  margin-left: 6px;
 }
 
 .champion-search {
@@ -54,6 +42,14 @@ section.row {
 
 .champion-title {
   float: right;
+}
+
+.search label {
+  font-size: 1.2em;
+  font-weight: 700;
+  margin-right: 12px;
+  display: inline-block;
+  vertical-align: ;
 }
 
 .champion-img {

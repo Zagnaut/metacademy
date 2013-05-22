@@ -16,12 +16,14 @@ html(lang="en")
         .navbar
           .navbar-inner
             a(class="brand", href="#")
-              h4.logo-text.inline Metacademy
-            ul.nav
+              h1.logo-text.inline Metacademy
+            ul.nav.nav-pills
+              li
+                a(href="#") 
+                  h3 Home
               li 
-                a(href="#") Home
-              li 
-                a(href="/versus") Versus
+                a(href="/versus")
+                  h3 Versus
 
       article.container
         block content

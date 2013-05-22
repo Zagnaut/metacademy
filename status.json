@@ -5,5 +5,8 @@
   ],
   "done": [
     "move todos from readme to status.json"
+  ],
+  "ideas": [
+    "use NginX to serve the frontend client and restify for the backend"
   ]
 }

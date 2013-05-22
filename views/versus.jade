@@ -3,61 +3,54 @@ extends layout
 block content
   section.matchups.row
     #player.span6.row(ng-controller="ChampCtrl")
-      h3 {{champion.name}}
+      header.champion-name
+        h3 {{champion.name}}
+        h4 
+        |  {{champion.title}}
       label Player
       input(type="text",
         placeholder="Enter Player Champion",
         ng-model="search",
         ng-change="change()",
         auto-complete)
-      div.card
+      .card
         .champion-img
           img(ng-src="{{champion.imageUrl}}")
-        .champion-title
-          h3 {{champion.title}}
-        .champion-abilities
-          table
-            tr
-              td(ng-repeat="ability in champion.abilities | limitTo:3")
-                img(ng-src="{{ability.icon}}")
-            tr
-              td(ng-repeat="ability in champion.abilities | limitTo:-2")
-                img(ng-src="{{ability.icon}}")
-        
-    #opponent.span6(ng-controller="ChampCtrl")
-      h3 {{champion.name}}
+        .champion-abilities(ng-repeat="ability in champion.abilities")
+          img(class="ability",ng-src="{{ability.icon}}")
+          h4.ability {{ability._key}}
+
+    #opponent.span6.row(ng-controller="ChampCtrl")
+      header.champion-name
+        h3 {{champion.name}}
+        h4 
+        |  {{champion.title}}
       label Opponent
       input(type="text",
         placeholder="Enter Opponent Champion",
         ng-model="search",
         ng-change="change()",
-        data-auto-complete)
-      div.card
+        auto-complete)
+      .card
         .champion-img
           img(ng-src="{{champion.imageUrl}}")
-        .champion-title
-          h3 {{champion.title}}
-        .champion-abilities
-          table
-            tr
-              td(ng-repeat="ability in champion.abilities | limitTo:3")
-                img(ng-src="{{ability.icon}}")
-            tr
-              td(ng-repeat="ability in champion.abilities | limitTo:-2")
-                img(ng-src="{{ability.icon}}")
+        .champion-abilities(ng-repeat="ability in champion.abilities")
+          img(class="ability",ng-src="{{ability.icon}}")
+          h4.ability {{ability._key}}
 
   //- Create a section of content per tab click.
   section.row.protips
-    h3.span12 Protips
-    ul.nav.nav-pills.span12.tabs
-      li
-        a(href="#") General
-      li
-        a(href="#") Strong Against
-      li
-        a(href="#") Weak Against
-      li
-        a(href="#") Good With
+    .span12
+      h3 Protips
+      ul.nav.nav-pills.tabs
+        li
+          a(href="#") General
+        li
+          a(href="#") Strong Against
+        li
+          a(href="#") Weak Against
+        li
+          a(href="#") Good With
 
   section.grid.protip-cards
     ul

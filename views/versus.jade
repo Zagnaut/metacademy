@@ -2,49 +2,49 @@ extends layout
 
 block content
   section.matchups.row
-    #player.span6.row(ng-controller="ChampCtrl")
+    #player.span6(ng-controller="ChampCtrl")
       .well
+        form.search
+          label Player
+          input(type="text",
+            placeholder="Enter Player Champion",
+            ng-model="search",
+            ng-change="change()",
+            auto-complete)
         header.champion-name
           h3 {{champion.name}}
           p {{champion.title}}
         .champion-img
-          img(ng-src="{{champion.imageUrl}}")
+          img(ng-src="{{champion.imageUrl}}", ng-hide="!champion")
         .champion-abilities(ng-repeat="ability in champion.abilities")
-          img(class="ability",ng-src="{{ability.icon}}")
+          img(class="ability", ng-src="{{ability.icon}}")
           h5.ability {{ability._key}}
-      form.search
-        label Player
-        input(type="text",
-          placeholder="Enter Player Champion",
-          ng-model="search",
-          ng-change="change()",
-          auto-complete)
 
     #opponent.span6(ng-controller="ChampCtrl")
       .well
+        form.search
+          label Opponent
+          input(type="text",
+            placeholder="Enter Opponent Champion",
+            ng-model="search",
+            ng-change="change()",
+            auto-complete,
+            ng-cloak)
         header.champion-name
           h3 {{champion.name}}
           p {{champion.title}}
         .champion-img
-          img(ng-src="{{champion.imageUrl}}")
+          img(ng-src="{{champion.imageUrl}}", ng-hide="!champion")
         .champion-abilities(ng-repeat="ability in champion.abilities")
-          img(class="ability",ng-src="{{ability.icon}}")
+          img(class="ability", ng-src="{{ability.icon}}")
           h5.ability {{ability._key}}
-      form.search
-        label Opponent
-        input(type="text",
-          placeholder="Enter Opponent Champion",
-          ng-model="search",
-          ng-change="change()",
-          auto-complete)
 
 
   section.row
     .span12
-      h3 Protips
       ul.nav.nav-pills.tabs
         li
-          a(href="#") General
+          a(href="#") Protips
         li
           a(href="#") Strong Against
         li

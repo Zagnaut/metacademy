@@ -30,27 +30,33 @@ section.row {
 
 .champion-name h3 {
   display: inline-block;
+  margin-bottom: 10px;
 }
 
 .champion-name p {
   display: inline;
   margin-left: 6px;
+
 }
 
 .champion-search {
   margin-botton: 25px;
 }
 
-.champion-title {
-  float: right;
+.search {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.search {
+  margin-bottom: 10px;
 }
 
 .search label {
-  font-size: 1.2em;
+  font-size: 1.5em;
   font-weight: 700;
-  margin-right: 12px;
-  display: inline-block;
-  vertical-align: ;
+  margin-right: 15px;
+  display: inline-block
 }
 
 .champion-img {

@@ -156,10 +156,7 @@ app.directive("autoComplete", function($timeout){
       source: champNames,
       select: function() {
         $timeout(function() {
-          elem.trigger('input');
-          if ("" === attrs["ng-src"]) {
-            attrs.src = "";
-          }
+          elem.trigger('input'); 
         }, 0);
       }
     });

@@ -3,9 +3,15 @@ extends layout
 block content
   section.matchups.row
     #player.span6.row(ng-controller="ChampCtrl")
-      header.champion-name
-        h3 {{champion.name}}
-        p {{champion.title}}
+      .well
+        header.champion-name
+          h3 {{champion.name}}
+          p {{champion.title}}
+        .champion-img
+          img(ng-src="{{champion.imageUrl}}")
+        .champion-abilities(ng-repeat="ability in champion.abilities")
+          img(class="ability",ng-src="{{ability.icon}}")
+          h5.ability {{ability._key}}
       form.search
         label Player
         input(type="text",
@@ -13,31 +19,25 @@ block content
           ng-model="search",
           ng-change="change()",
           auto-complete)
+
+    #opponent.span6(ng-controller="ChampCtrl")
       .well
+        header.champion-name
+          h3 {{champion.name}}
+          p {{champion.title}}
         .champion-img
           img(ng-src="{{champion.imageUrl}}")
         .champion-abilities(ng-repeat="ability in champion.abilities")
           img(class="ability",ng-src="{{ability.icon}}")
           h5.ability {{ability._key}}
-
-    #opponent.span6.row(ng-controller="ChampCtrl")
-      header.champion-name
-        h3 {{champion.name}}
-        p {{champion.title}}
       form.search
         label Opponent
         input(type="text",
-          class="champion-search",
           placeholder="Enter Opponent Champion",
           ng-model="search",
           ng-change="change()",
           auto-complete)
-      .well
-        .champion-img
-          img(ng-src="{{champion.imageUrl}}")
-        .champion-abilities(ng-repeat="ability in champion.abilities")
-          img(class="ability",ng-src="{{ability.icon}}")
-          h5.ability {{ability._key}}
+
 
   section.row
     .span12

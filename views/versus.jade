@@ -3,54 +3,63 @@ extends layout
 block content
   section.matchups.row
     #player.span6(ng-controller="ChampCtrl")
-      .well
-        form.search
-          label Player
-          input(type="text",
-            placeholder="Enter Player Champion",
-            ng-model="search",
-            ng-change="change()",
-            auto-complete)
+      form.search
+        label Player
+        input(type="text",
+          placeholder="Enter Player Champion",
+          ng-model="search",
+          ng-change="change()",
+          auto-complete)
+      .well(ng-hide="!champion")
         header.champion-name
           h3 {{champion.name}}
           p {{champion.title}}
         .champion-img
-          img(ng-src="{{champion.imageUrl}}", ng-hide="!champion")
+          img(ng-src="{{champion.imageUrl}}")
         .champion-abilities(ng-repeat="ability in champion.abilities")
           img(class="ability", ng-src="{{ability.icon}}")
           h5.ability {{ability._key}}
+      .well(class="prompt", ng-hide="champion")
+        h3 Choose your champion above
 
     #opponent.span6(ng-controller="ChampCtrl")
-      .well
-        form.search
-          label Opponent
-          input(type="text",
-            placeholder="Enter Opponent Champion",
-            ng-model="search",
-            ng-change="change()",
-            auto-complete,
-            ng-cloak)
+      form.search
+        label Opponent
+        input(type="text",
+          placeholder="Enter Opponent Champion",
+          ng-model="search",
+          ng-change="change()",
+          auto-complete)
+      .well(ng-hide="!champion")
         header.champion-name
           h3 {{champion.name}}
           p {{champion.title}}
         .champion-img
-          img(ng-src="{{champion.imageUrl}}", ng-hide="!champion")
+          img(ng-src="{{champion.imageUrl}}")
         .champion-abilities(ng-repeat="ability in champion.abilities")
           img(class="ability", ng-src="{{ability.icon}}")
           h5.ability {{ability._key}}
+      .well(class="prompt", ng-hide="champion")
+        h3 Choose your opponent above
 
 
-  section.row
-    .span12
-      ul.nav.nav-pills.tabs
-        li
-          a(href="#") Protips
-        li
-          a(href="#") Strong Against
-        li
-          a(href="#") Weak Against
-        li
-          a(href="#") Good With
+  section
+    .row
+      .span6
+        h2.protips-header Protips
+    .row
+      .card.span3
+        h4.protip-description
+          a Mundo goes where he pleases
+        .upvotes
+          p &hearts; 3
+        .user-info
+          p.user Zagnaut
+          img.user-img(src="http://placekitten.com/50/50")
+
+          
+      .card.span3
+      .card.span3
 
   section.protips-grid
     ul

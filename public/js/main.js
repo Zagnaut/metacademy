@@ -118,6 +118,19 @@ app.factory("Champions", function() {
   return champions;
 });
 
+app.factory("Thresh", function(){
+  var thresh = {
+    _id: 400,
+    name: "Thresh",
+    title: "the Chain Warden",
+    imageUrl: "http://na.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/portraits/412.jpg",
+    abilities: [
+        {}
+    ]
+  };
+  return thresh;
+});
+
 app.factory("Protips", function() {
   var protips = {};
   protips = {
@@ -162,8 +175,6 @@ app.directive("autoComplete", function($timeout){
     });
   };
 });
-
-
 
 var requestAllChampions = function() {
   $http({method: "GET", url: "/api/champions"}).

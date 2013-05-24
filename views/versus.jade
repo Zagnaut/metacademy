@@ -4,7 +4,7 @@ block content
   section.matchups.row
     #player.span6(ng-controller="ChampCtrl")
       form.search
-        label Player
+        label(ng-class="{unfilled: !champion}") Player
         input(type="text",
           placeholder="Enter Player Champion",
           ng-model="search",
@@ -20,11 +20,11 @@ block content
           img(class="ability", ng-src="{{ability.icon}}")
           h5.ability {{ability._key}}
       .well(class="prompt", ng-hide="champion")
-        h3 Choose your champion above
+        h3 Choose your champion
 
     #opponent.span6(ng-controller="ChampCtrl")
       form.search
-        label Opponent
+        label(ng-class="{unfilled: !champion}") Opponent
         input(type="text",
           placeholder="Enter Opponent Champion",
           ng-model="search",
@@ -40,7 +40,7 @@ block content
           img(class="ability", ng-src="{{ability.icon}}")
           h5.ability {{ability._key}}
       .well(class="prompt", ng-hide="champion")
-        h3 Choose your opponent above
+        h3 Choose your opponent
 
 
   section

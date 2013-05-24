@@ -50,8 +50,6 @@ section.row {
 .search label {
   font-size: 2em;
   text-align: center;
-  color: rgba(0, 0, 0, 0.5);
-  text-shadow: 0px 1px 0 rgba(255, 255, 255, 0.05);
   font-weight: 700;
   margin-right: 15px;
   display: inline-block
@@ -60,6 +58,7 @@ section.row {
 .champion-img {
   float: left;
   margin-right: 18.3333333px;
+  display: inline-block;
 }
 
 .ability {
@@ -110,6 +109,11 @@ section.row {
 
 .user-info {
   float: right;
+}
+
+.unfilled {
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .protips-header {

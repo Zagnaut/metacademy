@@ -10,15 +10,19 @@ block content
           ng-model="search",
           ng-change="change()",
           auto-complete)
-      .well(ng-hide="!champion")
+      .well.champ-box(ng-hide="!champion")
         header.champion-name
           h3 {{champion.name}}
           p {{champion.title}}
         .champion-img
           img(ng-src="{{champion.imageUrl}}")
         .champion-abilities(ng-repeat="ability in champion.abilities")
-          img(class="ability", ng-src="{{ability.icon}}")
-          h5.ability {{ability._key}}
+          img(class="ability-key",
+              ng-src="{{ability.icon}}",
+              bs-popover="'/partials/popover.html'",
+              data-unique="1",
+              data-trigger="hover")
+          h5.ability-key {{ability._key}}
       .well(class="prompt", ng-hide="champion")
         h3 Choose your champion
 
@@ -30,44 +34,79 @@ block content
           ng-model="search",
           ng-change="change()",
           auto-complete)
-      .well(ng-hide="!champion")
+      .well.champ-box(ng-hide="!champion")
         header.champion-name
           h3 {{champion.name}}
           p {{champion.title}}
         .champion-img
           img(ng-src="{{champion.imageUrl}}")
         .champion-abilities(ng-repeat="ability in champion.abilities")
-          img(class="ability", ng-src="{{ability.icon}}")
-          h5.ability {{ability._key}}
+          img(class="ability-key",
+              ng-src="{{ability.icon}}",
+              bs-popover="'/partials/popover.html'",
+              data-unique="1",
+              data-trigger="hover")
+          h5.ability-key {{ability._key}}
       .well(class="prompt", ng-hide="champion")
         h3 Choose your opponent
 
 
-  section
-    .container
-      .row
-        .span6
-          ul.unstyled.inline
-            li
-              a
-                h2.protips-header Protips
-            li
-              a
-                h2.protips-header Matchups
-      .row.well
-        .card.span3
+  section(ng-controller="ProtipsCtrl").container
+    .row
+      .span6
+        h2.protips-header Protips
+    .row
+      .protip.span3(ng-repeat="protip in protips")
+        .card
           h4.protip-description
-            a Mundo goes where he pleases
-          .upvotes
-            p &hearts; 3
-          .user-info
-            p.user Zagnaut
-            img.user-img(src="http://placekitten.com/50/50")
+            a {{protip.description}}
+          .protip-info
+            .upvotes
+              p &hearts; {{protip.upvotes}}
+            .user-info
+              p.user {{protip.user}}
+              img.user-img(src="http://placekitten.com/50/50")
 
-            
-        .card.span3
-        .card.span3
 
-  section.protips-grid
-    ul
-      protip
+  section(ng-controller="MatchupsCtrl").container
+    .row
+      .span6
+        h2.protips-header Matchups
+    .row
+      .span2
+        .card-small
+          img(src="http://na.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/103.jpg")
+          ul.unstyled.inline.votes
+            li
+              span.label.label-info 12 
+            li
+              span.label.label-warning 9 
+      .span2
+        .card-small
+          img(src="http://na.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/84.jpg")
+          ul.unstyled.inline.votes
+            li
+              span.label.label-info 0
+            li
+              span.label.label-warning 9
+
+      .span2
+        .card-small
+          img(src="http://na.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/12.jpg")
+          ul.unstyled.inline.votes
+            li
+              span.label.label-info 0
+            li
+              span.label.label-warning 0
+      .span2
+        .card-small
+          img(src="http://na.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/32.jpg")
+          ul.unstyled.inline.votes
+            li
+              span.label.label-info 100
+            li
+              span.label.label-warning 20
+
+
+
+

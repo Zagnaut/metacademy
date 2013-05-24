@@ -1,0 +1,13 @@
+<div name="abilityPopover">
+  <h4>{{ability.name}}</h4>
+  <br />
+  <div class="well well-small">
+    <span ng-cloak>{{ability.desc}}</span>
+  </div>
+  <p><span ng-cloak>{{ability.effect}}</span></p>
+  <hr ng-hide="!ability.cost" />
+  <ul class="unstyled" ng-hide="!ability.cost">
+    <li ng-cloak ng-hide="!ability.cost">Cost: {{ability.cost}}</li>
+    <li ng-cloak ng-hide="!ability.range">Range: {{ability.range}}</li>
+  </ul>
+</div>

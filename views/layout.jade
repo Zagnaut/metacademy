@@ -11,28 +11,33 @@ html(lang="en")
     link(rel="stylesheet", href='css/app.css')
 
   body(ng-app="metacademy",ng-cloak)
-    .container
-      header
-        .navbar
-          .navbar-inner
-            a(class="brand", href="#")
-              h1.logo-text.inline Metacademy
-            ul.nav.nav-pills#header-links
-              li
-                a(href="#") 
-                  h3 Home
-              li 
-                a(href="/versus")
-                  h3 Versus
+    header
+      .navbar
+        .navbar-inner
+          a(class="brand", href="#")
+            h1.logo-text.inline Metacademy
+          ul.nav.nav-pills#header-links
+            li
+              a(href="#") 
+                h3 Home
+            li 
+              a(href="/versus")
+                h3 Versus
 
       article.container
         block content
-
-    link(rel="stylesheet", href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css")
+    
     script(type="text/javascript", src='lib/jquery-1.9.1.js')
     script(type="text/javascript", src='http://code.jquery.com/ui/1.10.3/jquery-ui.js')
-    script(type="text/javascript", src='js/championslist.js')
-    script(type="text/javascript", src='js/championNames.js')
     script(type="text/javascript", src='components/angular/angular.js')
     script(type="text/javascript", src='bootstrap/js/bootstrap.js')
+
+    script(type="text/javascript", src='js/championslist.js')
+    script(type="text/javascript", src='js/championNames.js')
+    
     script(type="text/javascript", src='js/main.js')
+    script(type="text/javascript", src='js/championFactory.js')
+    script(type="text/javascript", src='js/protipsFactory.js')
+    script(src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/0.7.2/angular-strap.min.js")
+
+    link(rel="stylesheet", href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css")

@@ -44,22 +44,29 @@ block content
 
 
   section
-    .row
-      .span6
-        h2.protips-header Protips
-    .row
-      .card.span3
-        h4.protip-description
-          a Mundo goes where he pleases
-        .upvotes
-          p &hearts; 3
-        .user-info
-          p.user Zagnaut
-          img.user-img(src="http://placekitten.com/50/50")
+    .container
+      .row
+        .span6
+          ul.unstyled.inline
+            li
+              a
+                h2.protips-header Protips
+            li
+              a
+                h2.protips-header Matchups
+      .row.well
+        .card.span3
+          h4.protip-description
+            a Mundo goes where he pleases
+          .upvotes
+            p &hearts; 3
+          .user-info
+            p.user Zagnaut
+            img.user-img(src="http://placekitten.com/50/50")
 
-          
-      .card.span3
-      .card.span3
+            
+        .card.span3
+        .card.span3
 
   section.protips-grid
     ul

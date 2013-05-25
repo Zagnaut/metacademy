@@ -20,7 +20,7 @@ app.factory("Protips", function() {
       "content": "Spin 2 win brosef.",
       "comments": []
     },{
-      "user": "Ocelote",
+      "user": "Froggen",
       "upvotes": "9999",
       "description": "PRESS R MORE BROS",
       "content": "Also works with, Garen, Darius, Karthus, and Kat.",

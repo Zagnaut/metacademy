@@ -86,6 +86,7 @@ var champNames = [
     "Talon", 
     "Taric", 
     "Teemo", 
+    "Thresh", 
     "Tristana", 
     "Trundle", 
     "Tryndamere", 

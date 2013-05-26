@@ -10,7 +10,7 @@ block content
           ng-model="search",
           ng-change="change()",
           auto-complete)
-      .well.champ-box(ng-hide="!champion")
+      .well.champ-box(ng-show="champion")
         header.champion-name
           h3 {{champion.name}}
           p {{champion.title}}
@@ -35,7 +35,7 @@ block content
           ng-model="search",
           ng-change="change()",
           auto-complete)
-      .well.champ-box(ng-hide="!champion")
+      .well.champ-box(ng-show="champion")
         header.champion-name
           h3 {{champion.name}}
           p {{champion.title}}
@@ -52,23 +52,7 @@ block content
       .well(class="prompt", ng-hide="champion")
         h3 Choose your opponent
 
-
-  section(ng-controller="ProtipsCtrl").container
-    .row
-      .span6
-        h2.protips-header Protips
-    .row
-      .protip.span3(ng-repeat="protip in protips")
-        .card
-          h4.protip-description
-            a {{protip.description}}
-          .protip-info
-            .upvotes
-              p &hearts; {{protip.upvotes}}
-            .user-info
-              p.user {{protip.user}}
-              img.user-img(src="http://placekitten.com/50/50")
-
+  div(ng-include, src="'/partials/versus/_protips.html'")
 
   section(ng-controller="MatchupsCtrl").container
     .row

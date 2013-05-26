@@ -1,0 +1,25 @@
+<section class="container" ng-controller="ProtipsCtrl">
+    <div class="row">
+        <div class="span6">
+            <h2 class="protips-header">Protips for Annie vs. Ahri</h2> 
+        </div>
+    </div>
+    <div class="row">
+        <div class="protip span3" ng-repeat="protip in protips">
+            <div class="card">
+                <h4 class="protip-description">
+                    <a href="">{{protip.description}}</a>
+                </h4>
+                <div class="protip-info">
+                    <div class="upvotes">
+                        <p> &hearts; {{protip.upvotes}}</p>
+                    </div>
+                    <div class="user-info">
+                        <p class="user"> {{protip.user}}</p>
+                        <img src="http://placekitten.com/50/50" alt="" class="user-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,9 +1,11 @@
 app.factory("Protips", function() {
+    // Protip descriptions should have an 80 character limit.
+
     var protips = [];
     protips = [
         {
             "user": "Zagnaut",
-            "upvotes": "4",
+            "upvotes": "9999",
             "description": "Mundo goes where he pleases",
             "content": "He's a meat stick of course.",
             "comments": []
@@ -15,14 +17,14 @@ app.factory("Protips", function() {
             "comments": []
         },{
             "user": "Scarra",
-            "upvotes": "9999",
+            "upvotes": "400",
             "description": "PRESS R TO KATARINA",
             "content": "Spin 2 win brosef.",
             "comments": []
         },{
             "user": "Froggen",
-            "upvotes": "9999",
-            "description": "PRESS R MORE BROS",
+            "upvotes": "3",
+            "description": "Spin to win to win to win to win lorem ipsum supercow aristcote meow meomw meow",
             "content": "Also works with, Garen, Darius, Karthus, and Kat.",
             "comments": []
         }

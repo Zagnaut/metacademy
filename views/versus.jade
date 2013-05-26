@@ -1,98 +1,28 @@
 extends layout
 
 block content
-  section.matchups.row
-    #player.span6(ng-controller="ChampCtrl")
-      form.search
-        label(ng-class="{unfilled: !champion}") Player
-        input(type="text",
-          placeholder="Enter Player Champion",
-          ng-model="search",
-          ng-change="change()",
-          auto-complete)
-      .well.champ-box(ng-show="champion")
-        header.champion-name
-          h3 {{champion.name}}
-          p {{champion.title}}
-        .champion-img
-          img(ng-src="{{champion.imageUrl}}")
-        .champion-abilities(ng-repeat="ability in champion.abilities")
-          img(class="ability-key",
-              ng-src="{{ability.icon}}",
-              bs-popover="'/partials/popover.html'",
-              data-unique="1",
-              data-trigger="hover",
-              data-placement="left")
-          h5.ability-key {{ability._key}}
-      .well(class="prompt", ng-hide="champion")
-        h3 Choose your champion
-
-    #opponent.span6(ng-controller="ChampCtrl")
-      form.search
-        label(ng-class="{unfilled: !champion}") Opponent
-        input(type="text",
-          placeholder="Enter Opponent Champion",
-          ng-model="search",
-          ng-change="change()",
-          auto-complete)
-      .well.champ-box(ng-show="champion")
-        header.champion-name
-          h3 {{champion.name}}
-          p {{champion.title}}
-        .champion-img
-          img(ng-src="{{champion.imageUrl}}")
-        .champion-abilities(ng-repeat="ability in champion.abilities")
-          img(class="ability-key",
-              ng-src="{{ability.icon}}",
-              bs-popover="'/partials/popover.html'",
-              data-unique="1",
-              data-trigger="hover",
-              data-placement="left")
-          h5.ability-key {{ability._key}}
-      .well(class="prompt", ng-hide="champion")
-        h3 Choose your opponent
-
-  div(ng-include, src="'/partials/versus/_protips.html'")
-
-  section(ng-controller="MatchupsCtrl").container
-    .row
-      .span6
-        h2.protips-header Matchups
-    .row
-      .span2
-        .card-small
-          img(src="http://na.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/103.jpg")
-          ul.unstyled.inline.votes
-            li
-              span.label.label-info 12 
-            li
-              span.label.label-warning 9 
-      .span2
-        .card-small
-          img(src="http://na.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/84.jpg")
-          ul.unstyled.inline.votes
-            li
-              span.label.label-info 0
-            li
-              span.label.label-warning 9
-
-      .span2
-        .card-small
-          img(src="http://na.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/12.jpg")
-          ul.unstyled.inline.votes
-            li
-              span.label.label-info 0
-            li
-              span.label.label-warning 0
-      .span2
-        .card-small
-          img(src="http://na.leagueoflegends.com/sites/default/files/game_data/3.5.0.2/content/champion/icons/32.jpg")
-          ul.unstyled.inline.votes
-            li
-              span.label.label-info 100
-            li
-              span.label.label-warning 20
-
-
-
-
+  div(ng-controller="VersusCtrl")
+    div(ng-include="'/partials/versus/_champion.html'")
+     
+    div(ng-controller="TabsCtrl")
+      ul.inline.unstyled
+        li
+          a
+            h2(ng-click="matchupsTab()",
+              class="matchups-header",
+              ng-class="{filled: selection == 'matchups'}"
+            ) Matchups
+        li
+          a
+            h2(ng-click="protipsTab()",
+               class="protips-header",
+               ng-class="{filled: selection == 'protips'}"
+            ) Protips
+      div(ng-switch on="selection")
+        div(ng-include,
+            src="'/partials/versus/_matchups.html'"
+            ng-switch-when="matchups")
+        div(ng-include,
+            src="'/partials/versus/_protips.html'"
+            ng-switch-when="protips"
+            )

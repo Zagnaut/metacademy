@@ -1,0 +1,35 @@
+<section class="row">
+  <div ng-repeat="each in sides">
+    <div class="span6" ng-controller="ChampCtrl">
+      <form class="search">
+        <label ng-class="{unfilled: !champion}">{{each["1"]}}</label>
+        <input type="text"
+               placeholder="Enter {{each['1']}} Champion"
+               ng-model="search"
+               ng-change="change()"
+               auto-complete >
+      </form>
+      <div class="well champbox" ng-show="champion">
+        <header class="champion-name">
+          <h3>{{champion.name}}</h3> 
+          <p>{{champion.title}}</p> 
+        </header>
+        <div class="champion-img">
+          <img ng-src="{{champion.imageUrl}}">
+        </div>
+        <div class="champion-abilities" ng-repeat="ability in champion.abilities">
+          <img class="ability-key"
+               ng-src="{{ability.icon}}"
+               bs-popover="'/partials/versus/popover.html'"
+               data-unique="1"
+               data-trigger="hover"
+               data-placement="left" >
+          <h5 class="ability-key">{{ability._key}}</h5>
+        </div>
+      </div>
+      <div class="well prompt" ng-hide="champion">
+        <h3>Choose your {{each["2"]}}</h3>
+      </div>
+    </div>
+  </div>
+</section>

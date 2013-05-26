@@ -20,15 +20,46 @@ app.factory("RemainingChampions", function(){
     return newChamps;
 });
 
+function VersusCtrl($scope) {
+    var player, opponent = {};
+    player = {
+        "1": "Player",
+        "2": "champion"
+    };
+    opponent = {
+        "1": "Opponent",
+        "2": "opponent",
+    }
+
+    $scope.sides = [player, opponent];
+}
+
+function TabsCtrl($scope) {
+    $scope.tabs = ["matchups", "protips"];
+
+    $scope.selection = $scope.tabs[0];
+
+    $scope.matchupsTab = function() {
+        $scope.selection = $scope.tabs[0];
+    };
+    $scope.protipsTab = function() {
+        $scope.selection = $scope.tabs[1];
+    };
+}
+
 function ChampCtrl($scope, Champions) {
     $scope.champions = Champions;
 
     $scope.findChampionByName = function (name) {
-            for (var i = 0; i < $scope.champions.length; i++) {
-                if ($scope.champions[i].name === name) {
-                    return $scope.champions[i];
-                }
+        for (var i = 0; i < $scope.champions.length; i++) {
+            if ($scope.champions[i].name === capitalize(name)) {
+                return $scope.champions[i];
             }
+        }
+
+        function capitalize(string) {
+            return string.charAt(0).toUpperCase() + string.slice(1);
+        }
     }
     $scope.change = function() {
         $scope.champion = $scope.findChampionByName($scope.search);
@@ -40,7 +71,10 @@ function ProtipsCtrl($scope, Protips) {
 }
 
 function MatchupsCtrl($scope, Protips) {
-    $scope.protips = Protips;
+    $scope.getTimes = function(n) {
+        var times = [1,2,3,4,5,6];
+        return times;
+    }
 }
 
 app.directive("autoComplete", function($timeout){
@@ -52,20 +86,7 @@ app.directive("autoComplete", function($timeout){
                     elem.trigger('input'); 
                 }, 0);
             }
-        });
-    };
-});
-
-app.directive("champion", function() {
-    return  function(scope, elem, attrs) {
-        if (attrs.champion === "player") {
-            var header = "Player"
-            elem.header = header
-        } else if (attr.champion === "opponent") {
-            var header = "Opponent"
-            elem.x = header
-        }
-    }
+        });    };
 });
 
 var requestAllChampions = function() {

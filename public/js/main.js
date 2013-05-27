@@ -1,10 +1,11 @@
 var app = angular.module("metacademy", ["$strap.directives"])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
-            .when("/versus", {templateUrl: "/partials/versus.html"})
+            .when("/versus", {templateUrl: "/partials/versus/index.html"})
             .when("/versus/:player", {templateUrl: "/partials/versus.html"})
             .when("/versus/:player/:opponent", {templateUrl: "/partials/versus.html"})
-            .otherwise({redirectTo: "/index"});
+            .when("/index", {templateUrl: "/partials/index/index.html"})
+            .when("/", {templateUrl: "/partials/index/index.html"});
     }]);
 
 app.factory("RemainingChampions", function(){
@@ -75,6 +76,23 @@ function MatchupsCtrl($scope, Protips) {
         var times = [1,2,3,4,5,6];
         return times;
     }
+    $scope.list = [
+        {
+            "id":        "103",
+            "name":      "Ahri",
+            "title":     "the Nine-Tailed Fox",
+            "portrait":  "http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.152/content/champion/icons/103.jpg",
+            "upvotes":   13,
+            "downvotes": 13
+        }, {
+            "id":        "1",
+            "name":      "Annie",
+            "title":     "the Dark Child",
+            "portrait":  "http://na.leagueoflegends.com/sites/default/files/game_data/1.0.0.152/content/champion/icons/1.jpg",
+            "upvotes":   1,
+            "downvotes": 113
+        }
+    ];
 }
 
 app.directive("autoComplete", function($timeout){
@@ -88,14 +106,3 @@ app.directive("autoComplete", function($timeout){
             }
         });    };
 });
-
-var requestAllChampions = function() {
-    $http({method: "GET", url: "/api/champions"}).
-            success(function(data, status, headers, config) {
-                // $scope.champions = data;
-                console.log(data);
-            }).
-            error(function(data, status, headers, config) {
-                console.log(data);
-            });
-}

@@ -1,0 +1,33 @@
+<div ng-controller="VersusCtrl">
+  <div ng-include="'/partials/versus/_champion.html'"></div>
+  <div ng-controller="TabsCtrl">
+    <ul class="inline unstyled">
+      <li>
+        <a>
+          <h2 ng-click="matchupsTab()",
+               class="matchups-header",
+               ng-class="{filled: selection == 'matchups'}">
+            Matchups
+          </h2>
+        </a>
+      </li>
+      <li>
+        <a>
+          <h2 ng-click="protipsTab()",
+               class="protips-header",
+               ng-class="{filled: selection == 'protips'}">
+               Protips
+          </h2>
+        </a>
+      </li>
+    </ul>
+    <div ng-switch on="selection">
+      <div ng-include
+           src="'/partials/versus/_matchups.html'"
+           ng-switch-when="matchups"></div>
+      <div ng-include
+           src="'/partials/versus/_protips.html'"
+           ng-switch-when="protips"></div>
+    </div>
+  </div>
+</div>

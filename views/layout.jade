@@ -18,11 +18,10 @@ html(lang="en")
             h1.inline Metacademy
           ul.nav.nav-pills#header-links
             li 
-              a(href="/versus")
+              a(href="/#/versus")
                 h3 Versus
 
-    article.container
-      block content
+    article.container(ng-view)
     
     script(type="text/javascript", src='lib/jquery-1.9.1.js')
     script(type="text/javascript", src='http://code.jquery.com/ui/1.10.3/jquery-ui.js')

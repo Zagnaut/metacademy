@@ -29,7 +29,7 @@ function TabsCtrl($scope) {
     };
 }
 
-function ChampCtrl($scope, Champions) {
+function ChampCtrl($scope, $location, Champions) {
     $scope.champions = Champions;
 
     $scope.findChampionByName = function (name) {
@@ -54,6 +54,17 @@ function ChampCtrl($scope, Champions) {
 
     $scope.change = function() {
         $scope.champion = $scope.findChampionByName($scope.search);
+        if (typeof $scope.champion === "object") {
+            updateLocation();
+        }
+    }
+
+    function updateLocation() {
+        if ($scope.each["1"] === "Player") {
+            $location.path('/versus/' + $scope.search + "/" + $scope.opponent).replace();
+        } else if ($scope.each["1"] === "Opponent") {
+            $location.path('/versus/' + $scope.player + "/" + $scope.search).replace();
+        }
     }
 }
 

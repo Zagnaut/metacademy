@@ -47,16 +47,6 @@ section.row {
   display: inline-block;
 }
 
-.filled {
-  color: rgba(255, 255, 255, 0.75);
-  text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.05);
-}
-
-.unfilled {
-  color: rgba(0, 0, 0, 0.5);
-  text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.05);
-}
-
 .champion-img {
   float: left;
   margin-right: 18.3333333px;
@@ -83,7 +73,6 @@ section.row {
   color: rgba(255, 255, 255, 0.5);
   text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.05);
 }
-
 
 #header-links {
   float: right;
@@ -134,7 +123,7 @@ section.row {
   box-shadow: 0 2px 2px rgba(0,0,0,0.25);
   padding: 15px;
   margin-bottom: 30px;
-  height: 100px;
+  height: 105px;
   width: 100px;
 }
 
@@ -157,8 +146,6 @@ section.row {
   text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.05);
   margin-left: 15px;
 }
-
-
 
 /*
  *
@@ -199,4 +186,15 @@ section.row {
 .user-info img {
   display: inline-block;
   box-shadow: 0 2px 1px rgba(0, 0, 0, 0.25);
+}
+
+
+.filled {
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0px 2px 1px rgba(0, 0, 0, 0.05);
+}
+
+.unfilled {
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.05);
 }

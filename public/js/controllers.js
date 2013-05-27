@@ -44,10 +44,10 @@ function ChampCtrl($scope, $location, Champions) {
         }
     }
 
-    if ($scope.each["1"] === "Player") {
+    if (isPlayer()) {
         $scope.champion = $scope.findChampionByName($scope.player);
         $scope.search = $scope.player;
-    } else if ($scope.each["1"] === "Opponent") {
+    } else if (isOpponent()) {
         $scope.champion = $scope.findChampionByName($scope.opponent);
         $scope.search = $scope.opponent;
     }
@@ -60,10 +60,26 @@ function ChampCtrl($scope, $location, Champions) {
     }
 
     function updateLocation() {
-        if ($scope.each["1"] === "Player") {
+        if (isPlayer()) {
             $location.path('/versus/' + $scope.search + "/" + $scope.opponent).replace();
-        } else if ($scope.each["1"] === "Opponent") {
+        } else if (isOpponent()) {
             $location.path('/versus/' + $scope.player + "/" + $scope.search).replace();
+        }
+    }
+
+    function isPlayer() {
+        if ($scope.each["1"] === "Player") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function isOpponent() {
+        if ($scope.each["1"] === "Opponent") {
+            return true;
+        } else {
+            return false;
         }
     }
 }

@@ -1,7 +1,18 @@
+img {
+  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  transition: all .2s linear;
+}
+
 h1 {
   color: rgba(0, 0, 0, 0.5);
   text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.05);
 }
+
+h3 {
+  transition: all .2s linear;
+}
+
 
 body {
   padding-bottom: 75px;
@@ -40,6 +51,7 @@ section.row {
 }
 
 .search label {
+  transition: all .2s linear;
   font-size: 2.3em;
   text-align: center;
   font-weight: 700;
@@ -103,7 +115,7 @@ section.row {
 
 .card {
   background-color: rgba(255,255,255,0.2);
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: 0 2px 2px rgba(0,0,0,0.25);
   padding: 15px;
   height: 175px;
@@ -118,7 +130,7 @@ section.row {
 
 .card-champion {
   background-color: rgba(255,255,255,0.2);
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: 0 2px 2px rgba(0,0,0,0.25);
   padding: 15px;
   position: relative;
@@ -126,7 +138,7 @@ section.row {
 
 .card-small {
   background-color: rgba(255,255,255,0.2);
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: 0 2px 2px rgba(0,0,0,0.25);
   padding: 15px;
   margin-bottom: 30px;
@@ -146,9 +158,11 @@ section.row {
   color: rgba(0, 0, 0, 0.5);
   text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.05);
   margin-left: 15px;
+  transition: all .2s ease;
 }
 
 .protips-header {
+  transition: all .2s linear;
   color: rgba(0, 0, 0, 0.5);
   text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.05);
   margin-left: 15px;

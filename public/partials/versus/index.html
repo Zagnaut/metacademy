@@ -1,5 +1,5 @@
 <div ng-controller="VersusCtrl">
-  <div ng-include="'/partials/versus/_champion.html'"></div>
+  <div ng-include="'/partials/versus/champion.html'"></div>
   <div ng-controller="TabsCtrl">
     <ul class="inline unstyled">
       <li>
@@ -10,6 +10,9 @@
             Matchups
           </h2>
         </a>
+      </li>
+      <li>
+        <h2 class="tabs-extra">&</h2>
       </li>
       <li>
         <a>
@@ -23,10 +26,10 @@
     </ul>
     <div ng-switch on="selection">
       <div ng-include
-           src="'/partials/versus/_matchups.html'"
+           src="'/partials/versus/matchups.html'"
            ng-switch-when="matchups"></div>
       <div ng-include
-           src="'/partials/versus/_protips.html'"
+           src="'/partials/versus/protips.html'"
            ng-switch-when="protips"></div>
     </div>
   </div>

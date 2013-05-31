@@ -1,12 +1,18 @@
 {
   "todos": [
-    "Have angular insert champion information from autocomplete search",
-    "add a basic build tool for concat css and js"
+    "add glyphicons",
+    "Update layout.html with layout.jade",
+    "Merge layout.html with yeoman index.html",
+    "Merge rest of files with yeoman to access grunt's grunt and test process",
+    "Once yeoman version is fully operational, write first unit test",
+    "Use the multiple controller files instead of the big file"
   ],
   "done": [
-    "move todos from readme to status.json"
+    "move todos from readme to status.json",
+    "Have angular insert champion information from autocomplete search"
   ],
   "ideas": [
-    "use NginX to serve the frontend client and restify for the backend"
+    "Serve the front-end client separately from a restful back-end",
+    "Medium header, dark context bar, light content"
   ]
 }

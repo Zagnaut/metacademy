@@ -1,7 +1,14 @@
+.context-bar {
+  height: 40px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 2px 2px rgba(0,0,0, .5);
+}
+
 img {
-  box-shadow: 0 2px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
-  transition: all .2s linear;
+  transition: all .2s fade;
 }
 
 h1 {
@@ -12,7 +19,6 @@ h1 {
 h3 {
   transition: all .2s linear;
 }
-
 
 body {
   padding-bottom: 75px;
@@ -65,8 +71,20 @@ section.row {
   display: inline-block;
 }
 
+.champion-abilities {
+  padding-right: -10px;
+}
+
 .ability-key {
   margin: 7.2px;
+  display: inline-block;
+}
+
+.ability-icon {
+  height: 64px;
+  width: 64px;
+  margin: 7.2px;
+  margin-left: 10px;
   display: inline-block;
 }
 
@@ -84,6 +102,7 @@ section.row {
 .logo-text:hover {
   color: rgba(255, 255, 255, 0.5);
   text-shadow: 0px 2px 1px rgba(255, 255, 255, 0.05);
+  transition: all .2s linear;
 }
 
 #header-links {

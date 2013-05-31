@@ -3,16 +3,19 @@ function VersusCtrl($scope, $routeParams) {
     
     player = {
         "1": "Player",
-        "2": "champion"
+        "2": "champion",
+        "3": "player"
     };
+
     opponent = {
         "1": "Opponent",
         "2": "opponent",
+        "3": "opponent"
     }
 
     $scope.sides = [player, opponent];
 
-    $scope.player = typeof $routeParams.player === "string" ? $routeParams.player : "";
+    $scope.player   = typeof $routeParams.player   === "string" ? $routeParams.player : "";
     $scope.opponent = typeof $routeParams.opponent === "string" ? $routeParams.opponent : "";
 }
 
@@ -29,59 +32,36 @@ function TabsCtrl($scope) {
     };
 }
 
-function ChampCtrl($scope, $location, Champions) {
-    $scope.champions = Champions;
-
-    $scope.findChampionByName = function (name) {
-        for (var i = 0; i < $scope.champions.length; i++) {
-            if ($scope.champions[i].name === capitalize(name)) {
-                return $scope.champions[i];
-            }
-        }
-
-        function capitalize(string) {
-            return string.charAt(0).toUpperCase() + string.slice(1);
-        }
-    }
-
-    if (isPlayer()) {
-        $scope.champion = $scope.findChampionByName($scope.player);
-        $scope.search = $scope.player;
-    } else if (isOpponent()) {
-        $scope.champion = $scope.findChampionByName($scope.opponent);
-        $scope.search = $scope.opponent;
-    }
+function ChampCtrl($scope, $location, $champions) {
 
     $scope.change = function() {
-        $scope.champion = $scope.findChampionByName($scope.search);
-        if (typeof $scope.champion === "object") {
-            updateLocation();
-        }
+        
+        setChampion($scope.search);
+    }
+
+    updateChampions();
+
+    // On controller init, fills the champion box.
+    function updateChampions() {
+        var set = isPlayer() ? $scope.player : $scope.opponent
+        setChampion(set);
+    }
+
+    function setChampion(current) {
+        $scope.search = current;
+        $scope.champion = $champions.findByName($scope.search);
     }
 
     function updateLocation() {
         if (isPlayer()) {
-            $location.path('/versus/' + $scope.search + "/" + $scope.opponent).replace();
+            $location.path('/versus/').search({player: $scope.champion.name, opponent: $scope.opponent});
         } else if (isOpponent()) {
-            $location.path('/versus/' + $scope.player + "/" + $scope.search).replace();
+            $location.path('/versus/').search({player: $scope.player, opponent: $scope.champion.name});
         }
     }
 
-    function isPlayer() {
-        if ($scope.each["1"] === "Player") {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    function isOpponent() {
-        if ($scope.each["1"] === "Opponent") {
-            return true;
-        } else {
-            return false;
-        }
-    }
+    function isPlayer()   { return $scope.each["1"] === "Player"; }
+    function isOpponent() { return $scope.each["1"] === "Opponent"; }
 }
 
 function ProtipsCtrl($scope, Protips) {
@@ -93,6 +73,7 @@ function MatchupsCtrl($scope, Protips) {
         var times = [1,2,3,4,5,6];
         return times;
     }
+
     $scope.list = [
         {
             "id":        "103",

@@ -1,0 +1,40 @@
+<section class="container" ng-controller="ProtipsCtrl">
+    <div class="row">
+        <div class="protip span3" ng-repeat="protip in protips">
+            <div class="card">
+                <h4 class="protip-description">
+                    <a href="">{{protip.description}}</a>
+                </h4>
+                <div class="protip-info">
+                    <div class="user-info">
+                        <img src="http://placekitten.com/50/50" alt="" class="user-img">
+                        <p class="user"> {{protip.user}}</p>
+                    </div>
+                    <div class="upvotes">
+                        <p><span class="label label-info">{{protip.upvotes}} &hearts;</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Extra dummy row. Should generate from data -->
+    <div class="row">
+        <div class="protip span3" ng-repeat="protip in protips">
+            <div class="card">
+                <h4 class="protip-description">
+                    <a href="">{{protip.description}}</a>
+                </h4>
+                <div class="protip-info">
+                    <div class="user-info">
+                        <img src="http://placekitten.com/50/50" alt="" class="user-img">
+                        <p class="user"> {{protip.user}}</p>
+                    </div>
+                    <div class="upvotes">
+                        <p><span class="label label-info">{{protip.upvotes}} &hearts;</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

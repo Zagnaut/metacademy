@@ -1,0 +1,24 @@
+<section class="container" ng-controller="MatchupsCtrl">
+    <div
+        class="row">
+        <div class="span2" ng-repeat="item in list">
+            <div class="card-small">    
+                <img 
+                    ng-src="{{item.portrait}}"
+                    alt=""
+                    bs-popover="'/partials/versus/championPopover.html'"
+                    data-unique="1"
+                    data-trigger="click"
+                    data-placement="top" >
+                <ul class="unstyled inline votes">
+                    <li>
+                        <span class="label label-success">&#x25B2; {{item.upvotes}}</span>
+                    </li>
+                    <li>
+                        <span class="label label-important">&#x25BC; {{item.downvotes}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

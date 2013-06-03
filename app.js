@@ -20,7 +20,7 @@ db.once('open', function callback () {
 
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || 9500);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
@@ -34,7 +34,7 @@ app.configure(function(){
 
 
 /*
- *   Routes 
+ *   Routes
  */
 
 app.get('/api/champions',       api.allChampions);

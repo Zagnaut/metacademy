@@ -4,13 +4,15 @@ function VersusCtrl($scope, $routeParams) {
     player = {
         "1": "Player",
         "2": "champion",
-        "3": "player"
+        "3": "player",
+        champion: {}
     };
 
     opponent = {
         "1": "Opponent",
         "2": "opponent",
-        "3": "opponent"
+        "3": "opponent",
+        champion: {}
     }
 
     $scope.sides = [player, opponent];

@@ -1,0 +1,30 @@
+<div class="context-bar">
+  <ul class="inline unstyled">
+    <li>
+      <a>
+        <h3 ng-click="matchupsTab()",
+             class="matchups-header",
+             ng-class="{filled: selection == 'matchups'}">
+          Matchups
+        </h3>
+      </a>
+    </li>
+    <li>
+      <h3 class="tabs-extra">|</h3>
+    </li>
+    <li>
+      <a>
+        <h3 ng-click="protipsTab()",
+             class="protips-header",
+             ng-class="{filled: selection == 'protips'}">
+             Protips
+        </h3>
+        <h3 ng-show="!!player">for</h3>
+        <h3 ng-show="!!player">{{player.name}}</h3>
+        <h3 ng-show="!!opponent">against</h3>
+        <h3 ng-show="!!opponent">{{opponent.name}}</h3>
+      </a>
+    </li>
+  </ul>
+  <hr>
+</div>

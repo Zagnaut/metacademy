@@ -1,16 +1,15 @@
 function ChampCtrl($scope, $location, $champions) {
 
+    $scope.typeahead = champNames;
+
     $scope.change = function() {
-        
         setChampion($scope.search);
     }
 
     updateChampions();
 
-    // On controller init, fills the champion box.
     function updateChampions() {
-        var set = isPlayer() ? $scope.player : $scope.opponent
-        setChampion(set);
+        setChampion(isPlayer() ? $scope.player : $scope.opponent);
     }
 
     function setChampion(current) {
@@ -26,6 +25,14 @@ function ChampCtrl($scope, $location, $champions) {
         }
     }
 
-    function isPlayer()   { return $scope.each["1"] === "Player"; }
-    function isOpponent() { return $scope.each["1"] === "Opponent"; }
+    function isFilled() {
+        if (null !== champion)
+            return true;
+        else
+            return false;
+    }
+
+    function isPlayer() {
+        return $scope.each["1"] === "Player";
+    }
 }

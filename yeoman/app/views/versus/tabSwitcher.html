@@ -1,0 +1,8 @@
+<div ng-switch on="selection">
+  <div ng-include
+       src="'/views/versus/matchups.html'"
+       ng-switch-when="matchups"></div>
+  <div ng-include
+       src="'/views/versus/protips.html'"
+       ng-switch-when="protips"></div>
+</div>

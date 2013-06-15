@@ -2,13 +2,13 @@ var app = angular.module("metacademy", ["$strap.directives"])
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider
             .when("/versus", {
-                templateUrl: "/partials/versus/index.html",
+                templateUrl: "/views/versus/index.html",
                 controller: "VersusCtrl"
             })
-            // .when("/versus/:player", {templateUrl: "/partials/versus/index.html", controller: "VersusCtrl"})
-            // .when("/versus/:player/:opponent", {templateUrl: "/partials/versus/index.html", controller: "VersusCtrl"})
+            // .when("/versus/:player", {templateUrl: "/views/versus/index.html", controller: "VersusCtrl"})
+            // .when("/versus/:player/:opponent", {templateUrl: "/views/versus/index.html", controller: "VersusCtrl"})
             .when("/", {
-                templateUrl: "/partials/index/index.html"
+                templateUrl: "/views/index/index.html"
             }) 
             .otherwise({
                 redirectTo: "/"

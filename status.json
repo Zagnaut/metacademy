@@ -1,0 +1,8 @@
+{
+  "todo": [
+    "Refactor out all client code from the server.",
+    "In the client, store champions within VersusCtrl's scope for tabs &
+    routing",
+    "Get typeahead working properly"
+  ]
+}

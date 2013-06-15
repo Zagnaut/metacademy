@@ -1,4 +1,4 @@
-
+// Handles configuration and routing.
 var express     = require('express'),
     controllers = require('./controllers'),
     api         = require('./controllers/api'),

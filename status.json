@@ -1,8 +1,17 @@
 {
-  "todo": [
-    "Refactor out all client code from the server.",
-    "In the client, store champions within VersusCtrl's scope for tabs &
-    routing",
-    "Get typeahead working properly"
-  ]
+    "todo": [
+        "Refactor out all client code from the server.",
+        "Create services for protips and matchups(?best name for champ comparisons?)",
+        "Selecting a protip should bring up a modal window for upvotes, content, and comments",
+        "Context bar links should look more like a bar: centered links and sticky scrolling.",
+        "In the client, store champions within VersusCtrl's scope for tabs & routing"
+    ],
+    "completed": [
+        "Get typeahead working properly"
+    ],
+    "eventually": [
+        "Add user sessions tied to summoner ID",
+        "Users should be able to see and edit their protips, comments, and tier lists",
+        "Add tier lists page, allowing users to create ordered lists of champions with a title, champ list, champ justifications, upvotes, and community comments"
+    ]
 }

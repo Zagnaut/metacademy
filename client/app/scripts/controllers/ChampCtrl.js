@@ -1,6 +1,6 @@
 function ChampCtrl($scope, $location, $champions) {
 
-    $scope.typeahead = champNames;
+    $scope.typeahead = $champions.typeaheadList;
 
     $scope.change = function() {
         setChampion($scope.search);

@@ -13,7 +13,6 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
   </head>
   <body ng-app="metacademy">
     <!--[if lt IE 7]>
@@ -44,7 +43,6 @@
     
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="scripts/jquery-1.9.1.min.js"><\/script>')</script>
-    <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
     
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
     <script src="components/angular-resource/angular-resource.js"></script>
@@ -59,11 +57,13 @@
 
     <script src="scripts/factories.js"></script>
 
-    <script src="scripts/controllers.js"></script>
-    <script src="scripts/services/champions.js"></script>   
+    <script src="scripts/controllers/ChampCtrl.js"></script>
+    <script src="scripts/controllers/VersusCtrl.js"></script>
+    <script src="scripts/controllers/MatchupsCtrl.js"></script>
+    <script src="scripts/controllers/TabsCtrl.js"></script>
+    <script src="scripts/controllers/ProtipsCtrl.js"></script>
 
-    <!-- <script src="scripts//champions.js"></script>    -->
-
+    <script src="scripts/services/champions.js"></script>  
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/scripts.js"></script>

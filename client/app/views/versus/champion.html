@@ -7,8 +7,7 @@
                placeholder="Enter {{each['1']}} Champion"
                ng-model="search"
                bs-typeahead="typeahead"
-               ng-change="change()"
-               auto-complete >
+               ng-change="change()" >
       </form>
       <div class="well champ-box">
         <div ng-show="champion">
@@ -33,7 +32,6 @@
           <h3>Choose your {{each["2"]}}</h3>
         </div>
       </div>
-      <p>{{typeahead}}</p>
     </div>
   </div>
 </section>

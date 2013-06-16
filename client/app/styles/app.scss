@@ -1,22 +1,29 @@
 .navbar {
   margin-bottom: 0px;
 }
+
 .context-bar {
   height: 50px;
   width: 100%;
+ 
+  ul {
+    width: 40%;
+    margin: 0 auto;
+    margin-bottom: -20px;
+  }
 }
 
 hr {
-    border: 0;
-    height: 1px;
-    background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.25), rgba(0,0,0,0.75), rgba(0,0,0,0.25)); 
-    background-image: -moz-linear-gradient(left, rgba(0,0,0,0.25), rgba(0,0,0,0.75), rgba(0,0,0,0.25)); 
-    background-image: -ms-linear-gradient(left, rgba(0,0,0,0.25), rgba(0,0,0,0.75), rgba(0,0,0,0.25)); 
-    background-image: -o-linear-gradient(left, rgba(0,0,0,0.25), rgba(0,0,0,0.75), rgba(0,0,0,0.25)); 
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0.25), rgba(0,0,0,0.75), rgba(0,0,0,0.25)); 
+  background-image: -moz-linear-gradient(left, rgba(0,0,0,0.25), rgba(0,0,0,0.75), rgba(0,0,0,0.25)); 
+  background-image: -ms-linear-gradient(left, rgba(0,0,0,0.25), rgba(0,0,0,0.75), rgba(0,0,0,0.25)); 
+  background-image: -o-linear-gradient(left, rgba(0,0,0,0.25), rgba(0,0,0,0.75), rgba(0,0,0,0.25)); 
 }
 
 img {
-  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.25);
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
   transition: all .2s fade;
 }

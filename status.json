@@ -4,7 +4,8 @@
         "Create services for protips and matchups(?best name for champ comparisons?)",
         "Selecting a protip should bring up a modal window for upvotes, content, and comments",
         "Context bar links should look more like a bar: centered links and sticky scrolling.",
-        "In the client, store champions within VersusCtrl's scope for tabs & routing"
+        "In the client, store champions within VersusCtrl's scope for tabs & routing",
+        "break CSS out into SCSS modules"
     ],
     "completed": [
         "Get typeahead working properly"

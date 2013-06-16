@@ -1,3 +1,3 @@
-function ProtipsCtrl($scope, Protips) {
-    $scope.protips = Protips;
+function ProtipsCtrl($scope, $protips) {
+    $scope.protips = $protips.findProtips();
 }

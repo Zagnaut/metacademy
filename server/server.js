@@ -42,12 +42,7 @@ app.get('/api/champions/:name', api.findChampion);
 app.get('/api/protips',         api.getAllUsers);
 app.post('/api/protip',         api.postProtip);
 
-// app.get('/versus', controllers.versus);
-// app.get('/index',  controllers.index);
-app.get('/',       controllers.index);
-
-// End Routes
 
 http.createServer(app).listen(app.get('port'), function(){
-  console.log("Express server listening on port " + app.get('port'));
+  console.log("Api server listening on port " + app.get('port'));
 });

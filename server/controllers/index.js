@@ -1,25 +1,63 @@
+//
+// API Controller
+//
 
-/*
- * GET home page.
- */
+var Protip   = require('../models/protip.js'),
+    User     = require('../models/user.js'),
+    Comment  = require('../models/comment.js'),
+    Champion = require('../models/champion.js');
 
-exports.index = function (req, res) {
-  res.render('index');
+
+exports.allChampions = function(req, res) {
+  Champion.find(function(err, champions) {
+    res.send({"champions": champions});
+  });
 };
 
-exports.test = function (req, res) {
-  res.render('test');
+exports.findChampion = function(req, res) {
+  Champion.findOne({name: req.params.name}, function(err, champion) {
+    res.send({"champion": champion});
+  });
 };
 
-/*
- * GET versus page
- * Adds the Champion data to the
- */
 
-exports.versus = function (req, res) {
-  res.render('versus');
+// Protip methods
+
+// Send a list of all protips
+exports.protips = function(req, res) {      
+  Protip.find(function(err, data) {
+    if (null !== err)
+      console.log(err);
+    else 
+      res.send(data);
+  });
 };
 
-exports.form = function (req, res) {
-  res.render('form');
+// Create a new protip from the form
+exports.postProtip = function(req, res) {   
+  new Protip({
+    user: req.body.user,
+    description: req.body.description,
+    content: req.body.content
+  }).save();
+};
+
+
+// User methods
+
+exports.getAllUsers = function(req, res) {
+  User.find(function(err, data) {
+    res.send(data);
+  });
+};
+
+exports.postUser = function(req, res) {   // Create a new protip from the form
+  new User({
+    username: req.body.username,
+    password: req.body.password,
+    password: req.body.password,
+    email: req.body.email,
+    protips: [],
+    comments: []
+  }).save();
 };

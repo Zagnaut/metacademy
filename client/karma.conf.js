@@ -9,6 +9,7 @@ files = [
   JASMINE_ADAPTER,
   'app/components/angular/angular.js',
   'app/components/angular-mocks/angular-mocks.js',
+  'app/components/angular-resource/angular-resource.js',
   'app/scripts/*.js',
   'app/scripts/**/*.js',
   'test/mock/**/*.js',
@@ -16,14 +17,14 @@ files = [
 ];
 
 // list of files to exclude
-exclude = [];
+exclude = ['app/scripts/bootstrap.min.js'];
 
 // test results reporter to use
 // possible values: dots || progress || growl
 reporters = ['progress'];
 
 // web server port
-port = 8080;
+port = 8081;
 
 // cli runner port
 runnerPort = 9100;
@@ -49,7 +50,7 @@ autoWatch = false;
 browsers = ['Chrome'];
 
 // If browser does not capture in given timeout [ms], kill it
-captureTimeout = 5000;
+captureTimeout = 10000;
 
 // Continuous Integration mode
 // if true, it capture browsers, run tests and exit

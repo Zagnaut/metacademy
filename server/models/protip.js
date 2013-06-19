@@ -1,6 +1,3 @@
-
-// Module declarations
-
 var mongoose = require('mongoose')
   , Schema   = mongoose.Schema
   , ObjectId = Schema.ObjectId;
@@ -11,8 +8,6 @@ var protipSchema = new Schema({
   content:     String,     // match regex for a protip's max length.
   comments:    [ObjectId], // connects to comment models
   createdAt:   Date
-})
-
-// Creating and exporting our Protip model
+});
 
 exports = module.exports = mongoose.model('Protip', protipSchema);

@@ -1,5 +1,6 @@
 app.service('$protips', function() {
   var protips = [];
+  // Move protips into the server.
   protips = [
     {
         "user": "Zagnaut",
@@ -30,10 +31,11 @@ app.service('$protips', function() {
 
   this.findProtips = function () {
     return protips;
+    // Make XHR for protips...?
   };
 
-  this.findByChampionName = function (champion) {
-    return protips;
+  this.findByPlayerName = function (champion) {
+    // Make XHR for protips based on champion name in player=X query string.
   };
 
   this.findVersusProtips = function (player, opponent) {
@@ -41,6 +43,7 @@ app.service('$protips', function() {
 
     protips.append();
     return protips;
+    // Make XHR for protips based on champion name in player=X and opponent=X query string.
   };
 
 });

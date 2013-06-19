@@ -1,38 +1,33 @@
-function ChampCtrl($scope, $location, $champions) {
+angular.module("metacademy").controller(
+"ChampCtrl", function ($scope, $location, $champions) {
 
     $scope.typeahead = $champions.typeaheadList;
 
     $scope.change = function() {
-        setChampion($scope.search);
-    }
-
-    updateChampions();
-
-    function updateChampions() {
-        setChampion(isPlayer() ? $scope.player : $scope.opponent);
-    }
-
-    function setChampion(current) {
-        $scope.search = current;
-        $scope.champion = $champions.findByName($scope.search);
-    }
-
-    function updateLocation() {
         if (isPlayer()) {
-            $location.path('/versus/').search({player: $scope.champion.name, opponent: $scope.opponent});
+            $scope.setPlayer($scope.search);
+            $scope.champion = $scope.player.champion;
         } else if (isOpponent()) {
-            $location.path('/versus/').search({player: $scope.player, opponent: $scope.champion.name});
+            $scope.setOpponent($scope.search);
+            $scope.champion = $scope.opponent.champion;
         }
     }
 
-    function isFilled() {
-        if (null !== champion)
-            return true;
-        else
-            return false;
+    constructor();
+
+    function constructor () {
+        if (isPlayer()) {
+            $scope.champion = $scope.player.champion;
+        } else if (isOpponent()) {
+            $scope.champion = $scope.opponent.champion;
+        }
     }
 
     function isPlayer() {
         return $scope.each["1"] === "Player";
     }
-}
+
+    function isOpponent() {
+        return $scope.each["1"] === "Opponent";
+    }
+});

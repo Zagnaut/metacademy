@@ -229,7 +229,7 @@ app.service("$champions", function() {
       "Zyra"
   ];
 
-  this.findByName = function(name) {
+  this.getByName = function(name) {
     for (var i = 0; i < this.champions.length; i++) {
         if (this.champions[i].name === capitalize(name)) {
             return this.champions[i];

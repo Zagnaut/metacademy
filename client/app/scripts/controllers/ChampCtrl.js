@@ -3,6 +3,8 @@ angular.module("metacademy").controller("ChampCtrl",
 
         $scope.typeahead = $champions.typeaheadList;
 
+
+        // Triggers change function when text in input changes
         $scope.change = function() {
             if (isPlayer()) {
                 $scope.setPlayer($scope.search);
@@ -28,7 +30,7 @@ angular.module("metacademy").controller("ChampCtrl",
         // });
         
     
-        // Sets local champions on load.
+        // Sets local champions on controller load.
         initialize();
 
         function initialize () {
@@ -38,6 +40,8 @@ angular.module("metacademy").controller("ChampCtrl",
                 $scope.champion = $scope.opponent.champion;
             }
         }
+
+        // This seems inelegant. Should Champ ctrl be subclassed out into two contollers, each responsible for a side?
 
         function isPlayer() {
             return $scope.each["1"] === "Player";

@@ -1,0 +1,33 @@
+<div ng-controller="PlayerCtrl">
+  <form class="search">
+    <label ng-class="{filled: !!player}">Player</label>
+    <input type="text"
+           placeholder="Enter Player Champion"
+           ng-model="search"
+           bs-typeahead="typeahead"
+           ng-change="change()" >
+  </form>
+  <div class="well champ-box">
+    <div ng-show="player">
+      <header class="champion-name">
+        <h3>{{player.name}}</h3> 
+        <p>{{player.title}}</p> 
+      </header>
+      <div class="champion-img">
+        <img ng-src="{{player.imageUrl}}">
+      </div>
+      <div class="champion-abilities" ng-repeat="ability in player.abilities">
+        <img class="ability-icon"
+             ng-src="{{ability.icon}}"
+             bs-popover="'/views/versus/abilityPopover.html'"
+             data-unique="1"
+             data-trigger="hover"
+             data-placement="left" >
+        <h5 class="ability-key">{{ability._key}}</h5>
+      </div>
+    </div>
+    <div class="prompt" ng-hide="player">
+      <h3>Choose your champion</h3>
+    </div>
+  </div>
+</div>

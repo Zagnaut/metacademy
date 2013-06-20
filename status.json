@@ -1,13 +1,17 @@
 {
     "todo": [
-        "Refactor out all client code from the server.",
-        "Selecting a protip should bring up a modal window for upvotes, content, and comments",
-        "Context bar links should look more like a bar: centered links(check) and fixed location on scrolling.",
-        "In the client, maintain state of active champions on VersusCtrl for tabs & routing",
+        "Context-bar version 3.0",
         "Break CSS out into SCSS modules",
-        "Add fontawesome icons where the UX needs improvement"
+        "Finalize matchups design",
+        "Add fontawesome icons where the UX needs improvement",
+        "Fix matchup assignment to versus sides",
+        "Make champion selection more robust between the multiple controllers accessing VersusCtrl's methods."
     ],
     "completed": [
+        "Versus should route properly into and from query parameters",
+        "In the client, maintain state of active champions on VersusCtrl",
+        "Selecting a protip should bring up a modal window",
+        "Refactor out all client code from the server.",
         "Get typeahead working properly",
         "Create services for protips and matchups(?best name for champ comparisons?)"
     ],

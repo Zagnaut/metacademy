@@ -1,3 +1,18 @@
 @import "compass_twitter_bootstrap";
 @import "darkstrap";
-@import "app";
+
+@import "base/base";
+@import "layout/layout";
+
+@import "modules/navbar";
+@import "modules/context-bar";
+@import "modules/herounit";
+@import "modules/cards";
+@import "modules/text-states";
+@import "modules/champion";
+@import "modules/matchups";
+@import "modules/protips";
+
+[ng\:cloak], [ng-cloak], .ng-cloak {
+  display: none;
+}

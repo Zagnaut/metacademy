@@ -1,8 +1,11 @@
 function MatchupsCtrl($scope, $matchups) {
-    $scope.list = $matchups.getMatchups();
+    $scope.matchups = $matchups.getMatchups();
 
-    $scope.getTimes = function(n) {
-        var times = [1,2,3,4,5,6];
-        return times;
+    $scope.onPlayerSelect = function (matchup) {
+      $scope.setPlayer(matchup.name);
+    }
+
+    $scope.onOpponentSelect = function (matchup) {
+      $scope.setOpponent(matchup.name);
     }
 }

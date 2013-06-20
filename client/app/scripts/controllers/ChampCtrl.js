@@ -13,9 +13,9 @@ angular.module("metacademy").controller(
         }
     }
 
-    constructor();
+    initialize();
 
-    function constructor () {
+    function initialize () {
         if (isPlayer()) {
             $scope.champion = $scope.player.champion;
         } else if (isOpponent()) {

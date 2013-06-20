@@ -1,3 +1,20 @@
-<div bs-modal="">
-  
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+  <h4>{{protip.description}}</h4>
+</div>
+<div class="modal-body">
+  <p>{{protip.content}}</p>
+</div>
+<div class="modal-footer">
+  <br>
+  <div class="protip-info">
+      <div class="user-info">
+          <img src="http://placekitten.com/50/50" alt="" class="user-img">
+          <p class="user"> {{protip.user}}</p>
+      </div>
+      <div class="upvotes">
+          <p><span class="label label-info">{{protip.upvotes}} &hearts;</span></p>
+      </div>
+  </div>
+  <button type="button" class="btn" ng-click="hide()">Close</button>
 </div>

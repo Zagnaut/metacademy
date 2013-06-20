@@ -24,10 +24,10 @@ angular.module("metacademy").controller(
         updateLocation("opponent");
     };
 
-    constructor();
+    initialize();
 
     // Sets the champions from the url params upon controller creation
-    function constructor () {
+    function initialize () {
         var params = $location.search();
         if (typeof params.player == "string")
             $scope.setPlayer(params.player);
@@ -35,17 +35,11 @@ angular.module("metacademy").controller(
             $scope.setOpponent(params.opponent);
     }
 
-    function updateLocation(champion) {
-        if ($scope[champion].champion !== undefined && $scope[champion].champion.name !== undefined ) {
-            $location.search(champion, $scope[champion].champion.name);
+    function updateLocation(which) {
+        if ($scope[which].champion !== undefined && $scope[which].champion.name !== undefined ) {
+            $location.search(which, $scope[which].champion.name);
         } else {
-            $location.search(champion, null);
+            $location.search(which, null);
         }
-
-        // if ($scope.opponent.champion !== undefined && $scope.opponent.champion.name !== undefined) {
-        //     $location.search("opponent", $scope.opponent.champion.name);
-        // } else {
-        //     $location.search("opponent", null);
-        // }
     }
 });

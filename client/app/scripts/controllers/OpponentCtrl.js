@@ -1,5 +1,5 @@
 angular.module("metacademy").controller("OpponentCtrl",
-    function ($scope, $location, $champions) {
+    function ($scope, $champions) {
 
         $scope.typeahead = $champions.typeaheadList;
 

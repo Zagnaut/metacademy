@@ -31,8 +31,9 @@ app.configure(function(){
 // Routing
 app.get('/v1/champions',       api.allChampions);
 app.get('/v1/champions/:name', api.findChampion);
-app.get('/v1/protips',         api.getAllUsers);
-app.post('/v1/protip',         api.postProtip);
+// app.get('/v1/protips/:champion/:type', api.getAllUsers);
+// app.post('/v1/protip/:champion/:type', api.postProtip);
+// app.get('/v1/matchups/:champion/:type')
 
 // Create api server
 http.createServer(app).listen(app.get('port'), function(){

@@ -35,6 +35,8 @@ angular.module("metacademy").controller("VersusCtrl",
                 $scope.setOpponent(params.opponent);
         }
 
+
+        // Accepts the which string to access the appropriate object on VersusCtrl's scope and set the query string appropriately
         function updateLocation(which) {
             if ($scope[which].champion !== undefined && $scope[which].champion.name !== undefined ) {
                 $location.search(which, $scope[which].champion.name);

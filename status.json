@@ -1,4 +1,7 @@
 {
+    "technicalDebt": [
+        "Weak syncing and strange coupling among champions behavior. State is maintanied in VersusCtrl, how does matchups and champs hook into that?"
+    ],
     "todo": [
         "Context-bar version 3.0",
         "Break CSS out into SCSS modules",

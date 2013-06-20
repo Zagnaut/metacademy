@@ -1,3 +1,7 @@
+// 
+// Main imports
+// --------------------------------------------------
+
 @import "compass_twitter_bootstrap";
 @import "darkstrap";
 
@@ -9,9 +13,15 @@
 @import "modules/herounit";
 @import "modules/cards";
 @import "modules/text-states";
-@import "modules/champion";
+@import "modules/champions";
 @import "modules/matchups";
 @import "modules/protips";
+
+
+
+// 
+// ng-cloak fix
+// ------------------------
 
 [ng\:cloak], [ng-cloak], .ng-cloak {
   display: none;

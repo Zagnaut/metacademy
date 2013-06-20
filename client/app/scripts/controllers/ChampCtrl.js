@@ -13,6 +13,8 @@ angular.module("metacademy").controller("ChampCtrl",
             }
         }
 
+        // Unsuccessful attempt to watch champion state VersusCtrl's scope.
+
         // $scope.$watch($scope.player.champion, function(newValue, oldValue, scope) {
         //     if (newValue && newValue !== oldValue) {
         //         initialize();
@@ -25,7 +27,8 @@ angular.module("metacademy").controller("ChampCtrl",
         //     }
         // });
         
-
+    
+        // Sets local champions on load.
         initialize();
 
         function initialize () {

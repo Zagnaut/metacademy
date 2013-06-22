@@ -1,6 +1,6 @@
-angular.module("metacademy").controller("VersusCtrl",
+app.controller("VersusCtrl",
     function ($scope, $location, $champions) {
-        
+
         $scope.setPlayer = function (championName) {
             $scope.player = $champions.getByName(championName);
             updateLocation("player");
@@ -11,21 +11,29 @@ angular.module("metacademy").controller("VersusCtrl",
             updateLocation("opponent");
         };
 
-        initialize();
+        $scope.currentState = function() {
+            if ($scope.player && $scope.opponent) {
+                return "versus";
+            } else if ($scope.player && !$scope.opponent) {
+                return "for";
+            } else if ($scope.opponent && !$scope.player) {
+                return "against";
+            } else {
+                return "empty";
+            }
+        }
 
-        // Sets the champions from the url params upon controller creation
-        function initialize () {
+        // Calls itself to sets the champions from the url params upon controller creation
+        var initialize = (function() {
             var params = $location.search();
 
-            if (typeof params.player == "string")
-                $scope.setPlayer(params.player);
-            if (typeof params.opponent == "string")
-                $scope.setOpponent(params.opponent);
-        }
+            if (params.player) $scope.setPlayer(params.player);
+            if (params.opponent) $scope.setOpponent(params.opponent);
+        })();
 
 
         // Accepts the which string to access the appropriate object on VersusCtrl's scope and set the query string appropriately
-        function updateLocation(which) {
+        function updateLocation (which) {
             if ($scope[which] !== undefined && $scope[which].name !== undefined ) {
                 $location.search(which, $scope[which].name);
             } else {

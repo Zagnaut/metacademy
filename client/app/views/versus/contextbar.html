@@ -18,6 +18,7 @@
              class="protips-header",
              ng-class="{filled: selection == 'protips'}">
              Protips
+             <span class="unfilled" ng-show="player">for</span>  <span class="unfilled">{{player.name}}</span>  <span class="unfilled" ng-show="opponent">against</span>  <span class="unfilled">{{opponent.name}}</span>
         </h3>
       </a>
     </li>

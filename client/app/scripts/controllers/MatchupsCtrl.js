@@ -1,4 +1,5 @@
-function MatchupsCtrl($scope, $matchups) {
+angular.module("metacademy").controller("MatchupsCtrl",
+  function ($scope, $matchups) {
     $scope.matchups = $matchups.getMatchups();
 
     $scope.onPlayerSelect = function (matchup) {
@@ -8,4 +9,5 @@ function MatchupsCtrl($scope, $matchups) {
     $scope.onOpponentSelect = function (matchup) {
       $scope.setOpponent(matchup.name);
     }
-}
+  }
+);

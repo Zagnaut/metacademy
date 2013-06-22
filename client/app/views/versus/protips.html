@@ -1,6 +1,6 @@
 <section class="container" ng-controller="ProtipsCtrl">
     <div class="row">
-        <div class="protip span3" ng-repeat="protip in protips">
+        <div class="protip span3" ng-repeat="protip in protips | limitTo:4">
             <div class="card">
                 <h4 class="protip-description">
                     <a href="" bs-modal="'views/versus/protipModal.html'">{{protip.description}}</a>

@@ -1,4 +1,4 @@
-function TabsCtrl($scope) {
+app.controller("TabsCtrl", ["$scope", function ($scope) {
     $scope.tabs = ["matchups", "protips"];
 
     $scope.selection = $scope.tabs[0];
@@ -9,4 +9,4 @@ function TabsCtrl($scope) {
     $scope.protipsTab = function() {
         $scope.selection = $scope.tabs[1];
     };
-}
+}]);

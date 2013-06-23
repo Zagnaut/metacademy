@@ -1,32 +1,33 @@
-app.service('$protips', function() {
-  var protips = {
-    "Ahri": {
+app.service('$protips', ["ngResource", function ($resource) {
+  var PlayerProtips = $resource('/protips/:champion/:type');
 
-    },
-    "Annie": {
 
-    }
+  this.getPlayer = function() {
+    return Protip.get({player: $scope.player.name});
   };
 
-  
+  this.getOpponent = function() {
+    return Protip.get({player: $scope.opponent.name});
+  };
+
+  this.post = function(opts) {
+  }; 
 
   this.findProtips = function () {
     return protips;
-    // Make XHR for protips...?
   };
 
   this.loadMore = function() {
     return protips;
   };
 
-  this.findByPlayerName = function (champion) {
+  this.getByPlayerName = function (champion) {
     // Make XHR for protips based on champion name in player=X query string.
   };
 
-  this.findVersusProtips = function (player, opponent) {
+  this.getVersus = function (player, opponent) {
     var protips = [];
     return protips;
-    // Make XHR for protips based on champion name in player=X and opponent=X query string.
   };
 
-});
+}]);

@@ -6,6 +6,6 @@ app.controller("ProtipsCtrl", ["$scope", "$protips", function ($scope, $protips)
   };
 
   $scope.post = function() {
-    // Create a new protip from form.
+    $protips.post();
   };
 }]);

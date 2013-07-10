@@ -2,23 +2,22 @@
 var express     = require('express'),
     http        = require('http'),
     path        = require('path'),
-    mongoose    = require('mongoose'),
-    api         = require('./controllers');
+    api         = require('./controllers'),
+    mongoose    = require('mongoose');
 
 var app = module.exports = express();
+var db = {};
 
-// Database config
-mongoose.connect('mongodb://localhost/test');
-
-// Create a config file to use a remote host sometime.
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+mongoose.connect('mongodb://mike:Expat430@linus.mongohq.com:10039/metacademy');
+db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error: :('));
 db.once('open', function () {
   console.log("Mongoose is a-go");
 });
 
 // Application config and middleware
 app.configure(function(){
+  app.enable('trust proxy')
   app.set('port', process.env.PORT || 3030);
   app.use(express.favicon());
   app.use(express.logger('dev'));
@@ -29,11 +28,11 @@ app.configure(function(){
 });
 
 // Routing
-app.get('/v1/champions',       api.allChampions);
-app.get('/v1/champions/:name', api.findChampion);
-// app.get('/v1/protips/:champion/:type', api.getAllUsers);
-// app.post('/v1/protip/:champion/:type', api.postProtip);
-// app.get('/v1/matchups/:champion/:type')
+app.get('/api/champions',       api.getChampions);
+app.get('/api/champions/:name', api.findChampion);
+
+app.get('/api/protips/:champion', api.getProtips);
+app.post('/api/protips/:champion', api.postProtip);
 
 // Create api server
 http.createServer(app).listen(app.get('port'), function(){

@@ -3,13 +3,12 @@
         "Weak syncing and strange coupling among champions behavior. State is maintanied in VersusCtrl, how does matchups and champs hook into that?"
     ],
     "todo": [
-        "Context-bar version 3.0",
-        "Finalize matchups design",
-        "Add fontawesome icons where the UX needs improvement",
-        "Fix matchup assignment to versus sides",
-        "Make champion selection more robust between the multiple controllers accessing VersusCtrl's methods."
+        "Further modularize SCSS to remove non-default styling",
+        "Versus is too complicated. Split into two views, versus and champion.",
+        "Context-bar version 3.0"
     ],
     "completed": [
+        "Make champion selection more robust between the multiple controllers accessing VersusCtrl's methods.",
         "Versus should route properly into and from query parameters",
         "In the client, maintain state of active champions on VersusCtrl",
         "Selecting a protip should bring up a modal window",

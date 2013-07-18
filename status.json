@@ -4,7 +4,6 @@
     ],
     "todo": [
         "Context-bar version 3.0",
-        "Break CSS out into SCSS modules",
         "Finalize matchups design",
         "Add fontawesome icons where the UX needs improvement",
         "Fix matchup assignment to versus sides",
@@ -16,7 +15,8 @@
         "Selecting a protip should bring up a modal window",
         "Refactor out all client code from the server.",
         "Get typeahead working properly",
-        "Create services for protips and matchups(?best name for champ comparisons?)"
+        "Create services for protips and matchups(?best name for champ comparisons?)",
+        "Break CSS out into SCSS modules"
     ],
     "eventually": [
         "Add user sessions server-side tied to summoner ID",

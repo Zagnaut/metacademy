@@ -3,7 +3,7 @@
         "Weak syncing and strange coupling among champions behavior. State is maintanied in VersusCtrl, how does matchups and champs hook into that?"
     ],
     "todo": [
-        "Further modularize SCSS to remove non-default styling",
+        "Further modularize SCSS to remove non-default styling while maintaining structure",
         "Versus is too complicated. Split into two views, versus and champion.",
         "Context-bar version 3.0"
     ],

@@ -1,17 +1,22 @@
-app.service('$protips', ["ngResource", function ($resource) {
-  var PlayerProtips = $resource('/protips/:champion/:type');
+app.service('$protips', ["$champions", function () {
 
+  var proptips = [
+    {
+      user: "Zagnaut",
+      description: "Spin 2 Win",
+      content: "Garen, Katarina, Karthus, Xin Zhao",
+      upvotes: 200,
+    }
+  ];
 
-  this.getPlayer = function() {
-    return Protip.get({player: $scope.player.name});
+  this.getPlayer = function () {
+    // $http request with the player for the protips.
+    return protips;
   };
 
-  this.getOpponent = function() {
-    return Protip.get({player: $scope.opponent.name});
+  this.getOpponent = function () {
+    return protips;
   };
-
-  this.post = function(opts) {
-  }; 
 
   this.findProtips = function () {
     return protips;

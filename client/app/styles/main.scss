@@ -3,20 +3,19 @@
 // --------------------------------------------------
 
 @import "compass_twitter_bootstrap";
-@import "darkstrap";
 
 @import "base/base";
-@import "layout/layout";
 @import "layout/flatten";
+@import "layout/layout";
 
 @import "modules/navbar";
 @import "modules/context-bar";
 @import "modules/herounit";
 @import "modules/cards";
-@import "modules/text-states";
 @import "modules/champions";
 @import "modules/matchups";
 @import "modules/protips";
+@import "modules/text-states";
 
 
 

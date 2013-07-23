@@ -1,6 +1,6 @@
 app.service('$protips', ["$champions", function () {
 
-  var proptips = [
+  var protips = [
     {
       user: "Zagnaut",
       description: "Spin 2 Win",

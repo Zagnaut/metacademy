@@ -7,7 +7,7 @@ var app = angular.module("metacademy", ["$strap.directives", "ngResource"])
             })
             .when("/", {
                 templateUrl: "/views/index/index.html"
-            }) 
+            })
             .otherwise({
                 redirectTo: "/"
             });

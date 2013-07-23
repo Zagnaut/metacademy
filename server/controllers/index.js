@@ -1,6 +1,6 @@
 //
-// API Controller
-//
+// API Controllers
+// --------------
 
 var Protip   = require('../models/protip.js'),
     User     = require('../models/user.js'),
@@ -8,7 +8,7 @@ var Protip   = require('../models/protip.js'),
     Champion = require('../models/champion.js');
 
 
-exports.allChampions = function(req, res) {
+exports.getChampions = function(req, res) {
   Champion.find(function(err, champions) {
     res.send({"champions": champions});
   });
@@ -24,22 +24,29 @@ exports.findChampion = function(req, res) {
 // Protip methods
 
 // Send a list of all protips
-exports.protips = function(req, res) {      
-  Protip.find(function(err, data) {
-    if (null !== err)
-      console.log(err);
-    else 
-      res.send(data);
-  });
+exports.getProtips = function(req, res) {
+  var champion = req.params.champion;
+  var opts = req.query;
+
+  function getAllProtips() {
+    Protip.find(function(err, data) {
+      if (err) console.log(err);
+      else {
+        res.send(data);
+      }
+    });
+  }
 };
 
 // Create a new protip from the form
 exports.postProtip = function(req, res) {   
-  new Protip({
-    user: req.body.user,
+  var protip = new Protip({
     description: req.body.description,
     content: req.body.content
-  }).save();
+  })
+  protip.user = req.body.user;
+  protip.upvotes = 0;
+  protip.save();
 };
 
 

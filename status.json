@@ -1,25 +1,29 @@
 {
     "technicalDebt": [
-        "Weak syncing and strange coupling among champions behavior. State is maintanied in VersusCtrl, how does matchups and champs hook into that?"
+      "Weak syncing and strange coupling among champions behavior. State is maintanied in VersusCtrl, how does matchups and champs hook into that?"
     ],
-    "todo": [
-        "Further modularize SCSS to remove non-default styling",
-        "Versus is too complicated. Split into two view page, versus and champion.",
-        "Context-bar version 3.0"
+    "client-todo": [
+      "Further modularize SCSS to remove non-default styling",
+      "Versus is too complicated. Split into two view page, versus and champion.",
+      "Context-bar version 3.0"
     ],
+    "server-todo": {
+      "Add champions API.",
+      "Add protips API."
+    },
     "completed": [
-        "Make champion selection more robust between the multiple controllers accessing VersusCtrl's methods.",
-        "Versus should route properly into and from query parameters",
-        "In the client, maintain state of active champions on VersusCtrl",
-        "Selecting a protip should bring up a modal window",
-        "Refactor out all client code from the server.",
-        "Get typeahead working properly",
-        "Create services for protips and matchups(?best name for champ comparisons?)",
-        "Break CSS out into SCSS modules"
+      "Make champion selection more robust between the multiple controllers accessing VersusCtrl's methods.",
+      "Versus should route properly into and from query parameters",
+      "In the client, maintain state of active champions on VersusCtrl",
+      "Selecting a protip should bring up a modal window",
+      "Refactor out all client code from the server.",
+      "Get typeahead working properly",
+      "Create services for protips and matchups(?best name for champ comparisons?)",
+      "Break CSS out into SCSS modules"
     ],
     "eventually": [
-        "Add user sessions server-side tied to summoner ID",
-        "Users should be able to see and edit their protips, comments, and tier lists",
-        "Add tier lists page, allowing users to create ordered lists of champions with a title, champ list, champ justifications, upvotes, and community comments"
+      "Add user sessions server-side tied to summoner ID",
+      "Users should be able to see and edit their protips, comments, and tier lists",
+      "Add tier lists page, allowing users to create ordered lists of champions with a title, champ list, champ justifications, upvotes, and community comments"
     ]
 }

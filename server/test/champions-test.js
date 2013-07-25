@@ -1,18 +1,25 @@
-var expect = require("expect.js");
-var champions = require("../champions/");
+var expect = require("expect.js"),
+    Champion = require("../champions/"),
+    app = require('../server.js');
 
-describe('Champions', function() {
-    describe('#getChampions', function() {
-        it('should return a list of all champions', function() {
-            var response = champions.getChampions();
-            expect(response).to.be.an(Array);
-        })
+describe('Champions Provider', function() {
+
+    describe('#getAll', function() {
+        it('returns a list of all champions', function(done) {
+            Champion.getAll(function (data){
+                expect(data).to.be.an(Array);
+                done();
+            });
+        });
     });
 
-    describe('#getChampion', function() {
-        it('should return a single champion by name', function() {
-            var response = champions.getChampion('Ahri');
-            expect(response.name).to.eql('Ahri');
+    describe('#getByName', function() {
+        it('returns a single champion by name', function(done) {
+            Champion.getByName('Ahri', function (data){
+                expect(data).to.be.an(Object);
+                expect(data.name).to.eql('Ahri');
+                done();
+            });
         });
     });
 });

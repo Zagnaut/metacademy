@@ -16,7 +16,7 @@ exports.getByName = function(name, callback) {
         name: name
     };
 
-    Champion.find(query, function(err, champion) {
+    Champion.findOne(query, function(err, champion) {
         if (err) {
             return console.log(err);
         }

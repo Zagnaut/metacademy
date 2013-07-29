@@ -20,37 +20,7 @@ exports.findChampion = function(req, res) {
   });
 };
 
-
-// Protip methods
-
-// Send a list of all protips
-exports.getProtips = function(req, res) {
-  var champion = req.params.champion;
-  var opts = req.query;
-
-  function getAllProtips() {
-    Protip.find(function(err, data) {
-      if (err) console.log(err);
-      else {
-        res.send(data);
-      }
-    });
-  }
-};
-
-// Create a new protip from the form
-exports.postProtip = function(req, res) {   
-  var protip = new Protip({
-    description: req.body.description,
-    content: req.body.content
-  })
-  protip.user = req.body.user;
-  protip.upvotes = 0;
-  protip.save();
-};
-
-
-// User methods
+/ User methods
 
 exports.getAllUsers = function(req, res) {
   User.find(function(err, data) {
@@ -58,7 +28,7 @@ exports.getAllUsers = function(req, res) {
   });
 };
 
-exports.postUser = function(req, res) {   // Create a new protip from the form
+exports.postUser = function(req, res) {   // Create a new user from the form
   new User({
     username: req.body.username,
     password: req.body.password,

@@ -3,6 +3,7 @@ var express   = require('express'),
     mongoose  = require('mongoose');
 
 var Champions = require('./champions');
+var Protips = require('./protips');
 
 var app = module.exports = express();
 

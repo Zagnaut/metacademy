@@ -1,4 +1,13 @@
-== README
+# Metacademy API
+
+## TODOS
+* Setup postgres and configure development postgres
+* Consider a produciton environment
+* Redefine core processes established in the node.js prototype
+* Migrate models from prototype
+* Migrate routes from  prototype
+* Define some controllers
+* Add serializers
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
